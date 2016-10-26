@@ -1,3 +1,191 @@
+<script>
+
+    // AJAX CALL
+    var request;
+    if(window.XMLHttpRequest){
+        request = new XMLHttpRequest();
+    } else {
+        request = new ActiveXObject("Mirosoft.XMLHTTP");
+    }
+
+    function bandOptions(){
+        
+        // open the request
+        request.open('GET', 'ringOptions.xml');
+        
+        request.onreadystatechange = function(){
+        if ((request.readyState === 4 ) && (request.status === 200)){
+            
+            //display the XML table in the console: troubleshooting 
+            //console.log(request.responseXML.getElementsByTagName("BAND")[0]);
+            
+            // grab all the values in XML, put into var
+            var bandItems = request.responseXML.getElementsByTagName("BAND");
+            // init ul list
+            var output = "<ul>";
+            
+            // loop through all the XML types
+            for(var i = 0; i < bandItems.length; i++){
+                output += "<li>" + bandItems[i].firstChild.nodeValue + "</li>";
+            }
+            
+            // add all for var and close in end ul tag
+            output += "</ul>";
+            
+            // display all results 
+            document.getElementById("options").innerHTML = output;
+            
+        }
+    }
+    request.send();
+        
+    }
+    
+    function colorOptions(){
+        
+        // open the request
+        request.open('GET', 'ringOptions.xml');
+        
+        request.onreadystatechange = function(){
+        if ((request.readyState === 4 ) && (request.status === 200)){
+            
+            //display the XML table in the console: troubleshooting 
+            //console.log(request.responseXML.getElementsByTagName("COLOR")[0]);
+            
+            // grab all the values in XML, put into var
+            var bandItems = request.responseXML.getElementsByTagName("COLOR");
+            // init ul list
+            var output = "<ul>";
+            
+            // loop through all the XML types
+            for(var i = 0; i < bandItems.length; i++){
+                output += "<li>" + bandItems[i].firstChild.nodeValue + "</li>";
+            }
+            
+            // add all for var and close in end ul tag
+            output += "</ul>";
+            
+            // display all results 
+            document.getElementById("options").innerHTML = output;
+            
+        }
+    }
+    request.send();
+        
+    }
+    
+    function stoneOptions(){
+        
+        // open the request
+        request.open('GET', 'ringOptions.xml');
+        
+        request.onreadystatechange = function(){
+        if ((request.readyState === 4 ) && (request.status === 200)){
+            
+            //display the XML table in the console: troubleshooting 
+            //console.log(request.responseXML.getElementsByTagName("STONE")[0]);
+            
+            // grab all the values in XML, put into var
+            var bandItems = request.responseXML.getElementsByTagName("STONE");
+            // init ul list
+            var output = "<ul>";
+            
+            // loop through all the XML types
+            for(var i = 0; i < bandItems.length; i++){
+                output += "<li>" + bandItems[i].firstChild.nodeValue + "</li>";
+            }
+            
+            // add all for var and close in end ul tag
+            output += "</ul>";
+            
+            // display all results 
+            document.getElementById("options").innerHTML = output;
+            
+        }
+    }
+    request.send();
+        
+    }
+    
+    function cutOptions(){
+        
+        // open the request
+        request.open('GET', 'ringOptions.xml');
+        
+        request.onreadystatechange = function(){
+        if ((request.readyState === 4 ) && (request.status === 200)){
+            
+            //display the XML table in the console: troubleshooting 
+            //console.log(request.responseXML.getElementsByTagName("CUT")[0]);
+            
+            // grab all the values in XML, put into var
+            var bandItems = request.responseXML.getElementsByTagName("CUT");
+            // init ul list
+            var output = "<ul>";
+            
+            // loop through all the XML types
+            for(var i = 0; i < bandItems.length; i++){
+                output += "<li>" + bandItems[i].firstChild.nodeValue + "</li>";
+            }
+            
+            // add all for var and close in end ul tag
+            output += "</ul>";
+            
+            // display all results 
+            document.getElementById("options").innerHTML = output;
+            
+        }
+    }
+    request.send();
+        
+    }
+    
+
+        
+        // associative array for ring
+        var ring = new Array();
+        ring['band'] = "basic";
+        ring['color'] = "silver";
+        ring['stone'] = "diamond";
+        ring['cut'] = "cut";
+
+        // pass array to php
+        var json = jsObj2phpObj(ring);
+        $.post("json.php", {json:json}, function(data){
+            console.log(data);
+        });
+
+        function jsObj2phpObj(object){
+            var json = "{";
+            for(property in object){
+                var value = object[property];
+                if(typeof(value) == 'string'){
+                    json += '"' + property + '":"' + value + '",'
+                }else{
+                    if(!value[0]){ // if its an associative array
+                        json += '"' + property + '":' + jsObj2phpObj(value)+ ',';
+                    }else{
+                        json += '"' + property + '"[';
+                        for(prop in value) json += '"' + value[prop] + '",';
+                        json = json.substr(0, json.length-1) + "],";
+                    }
+                }
+            }
+            return json.substr(0, json.length-1) + "}";
+        }
+    
+</script>
+
+    
+
+
+
+<ul>
+    <li><span onclick="bandOptions()" >Band Options</span></li>
+    <li><span onclick="colorOptions()" >Color Options</span></li>
+    <li><span onclick="stoneOptions()" >Stone Options</span></li>
+    <li><span onclick="cutOptions()" >Cut Options</span></li>
+</ul>
 <?php
 
 // declare the ring variable
@@ -16,6 +204,8 @@
 // display images
 // select image
 // image triggers switch
+
+
 
 
 $ring = array(
@@ -59,44 +249,14 @@ switch ($ring){
 }
 
 
-function arrayInsert($ring = ''){
-    
-    //switch: if select array_push
-    
-    //$ring['band'][3] = 'your mom';
-    // or
-    //array_push($ring, 'option');
-    
-    return $ring;
-    
-}
-
-$optionOne = $_POSTP['one'];
-$optionTwo = $_POSTP['two'];
-$optionThree = $_POSTP['three'];
-
-echo $optionOne." is working;";
-
-echo '<pre>', print_r($ring, true), '</pre>';
+// view array uncomment code below
+//echo '<pre>', print_r($ring, true), '</pre>';
 
 ?>
 
-<form action="." method="post" name="bandForm">
-<ul>
-    <li id="one">option 1</li>
-    <li id="two">option 2</li>
-    <li id="three">option 3</li>
+<div id="options"></div>
 
-</ul>
-    <button name="submit" type="button">Submit</button>
-</form>
-
-<script>
-$('#one');
-</script>
-
-
- <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 
 
 

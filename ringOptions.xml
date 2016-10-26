@@ -1,0 +1,22 @@
+<CATALOG>
+    <BANDTYPE>
+        <BAND>Basic</BAND>
+        <BAND>Thin</BAND>
+        <BAND>Large</BAND>
+    </BANDTYPE>
+    <COLORTYPE>
+        <COLOR>Rose Gold</COLOR>
+        <COLOR>Silver</COLOR>
+        <COLOR>Gold</COLOR>
+    </COLORTYPE>
+    <STONETYPE>
+        <STONE>Diamond</STONE>
+        <STONE>Fake</STONE>
+        <STONE>Ruby</STONE>
+    </STONETYPE>
+    <CUTTYPE>
+        <CUT>Princess</CUT>
+        <CUT>Square</CUT>
+        <CUT>Opal</CUT>
+    </CUTTYPE>
+</CATALOG>
