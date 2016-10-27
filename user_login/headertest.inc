@@ -49,24 +49,12 @@ $(document).ready(function() {
 <!-- Main Page Container -->
 <div style="width:939px; margin-left:auto; margin-right:auto;">
 
-    <!-- Social Media Start -->
-    <div id="socialMedia" style="width:100%; height:65px; max-height:65px; overflow:hidden; margin-left:auto; margin-right:auto;">
-        <p style="text-align:center; text-shadow:1px 1px 1px #000000; font-size:10px; margin-bottom:6px;">Follow Jetset Magazine</p>
-        <a href="http://www.facebook.com/JetsetOnline" target="_blank" title="Follow Jetset Magazine on Facebook"><img style="border:none; width:26px; height:26px; text-shadow:1px 1px 1px #828282;" width="26" height="26" border="0" src="http://www.jetsetmag.com/images/social-icons/facebook-32x32.png" alt="Facebook" /></a>
-        <a href="https://www.twitter.com/JetsetOnline" target="_blank" title="Follow Jetset Magazine on Twitter"><img style="border:none; width:26px; height:26px; text-shadow:1px 1px 1px #828282;" width="26" height="26" border="0" src="http://www.jetsetmag.com/images/social-icons/twitter-32x32.png" alt="Twitter" /></a>
-        <a href="http://www.linkedin.com/company/jetset-magazine" target="_blank" title="Follow Jetset Magazine on Linkedin"><img style="border:none; width:26px; height:26px; text-shadow:1px 1px 1px #828282;" width="26" height="26" border="0" src="http://www.jetsetmag.com/images/social-icons/linkedin-32x32.png" alt="LinkedIn" /></a>
-        <a href="https://plus.google.com/111625090156735611851" target="_blank" title="Follow Jetset Magazine on Google"><img style="border:none; width:26px; height:26px; text-shadow:1px 1px 1px #828282;" width="26" height="26" border="0" src="http://www.jetsetmag.com/images/social-icons/google-32x32.png" alt="Google+" /></a>
-        <a href="http://www.youtube.com/user/JetsetMagazine" target="_blank" title="Follow Jetset Magazine on YouTube"><img style="border:none; width:26px; height:26px; text-shadow:1px 1px 1px #828282;" width="26" height="26" border="0" src="http://www.jetsetmag.com/images/social-icons/youtube-32x32.png" alt="YouTube" /></a>
-        <a href="http://www.pinterest.com/jetsetmagazine" target="_blank" title="Follow Jetset Magazine on Pinterest"><img style="border:none; width:26px; height:26px; text-shadow:1px 1px 1px #828282;" width="26" height="26" border="0" src="http://www.jetsetmag.com/images/social-icons/pinterest-32x32.png" alt="Pinterest" /></a>
-        <a href="http://instagram.com/jetsetmag" target="_blank" title="Follow Jetset Magazine on Instagram"><img style="border:none; width:26px; height:26px; text-shadow:1px 1px 1px #828282;" width="26" height="26" border="0" src="http://www.jetsetmag.com/images/social-icons/instagram-32x32.png" alt="Instagram" /></a>
-        <a href="http://www.jetsetmag.com/newsroom/feed/" target="_blank" title="Subscribe to Jetset Magazine RSS"><img style="border:none; width:26px; height:26px; text-shadow:1px 1px 1px #828282;" width="26" height="26" border="0" src="http://www.jetsetmag.com/images/social-icons/rss-32x32.png" alt="RSS" /></a>
-    </div>
-        
+    
     <!-- Main Header Container -->
-    <div style="width:100%; background-image:url(http://www.jetsetmag.com/images/jetsetheader.jpg); background-repeat:no-repeat; background-position:top;">
+    <div style="width:100%; background:gray; background-repeat:no-repeat; background-position:top;">
         
         <!-- Top Head -->
-        <div style="width:939px: height:108px; max-height:108px; background-image:url(http://www.jetsetmag.com/images/jetsetheader.jpg); background-repeat:no-repeat; margin-left:auto; margin-right:auto; clear:both;">
+        <div style="width:939px: height:108px; max-height:108px; background:gray; background-repeat:no-repeat; margin-left:auto; margin-right:auto; clear:both;">
         
             <!-- Left Head -->
             <div id="logonButton" style="width:350px; min-width:350px; height:104px; max-height:104px; float:left;">
@@ -188,7 +176,7 @@ $(document).ready(function() {
             
             <!-- Center Head -->
             <div style="width:250px; min-width:250px; height:104px; max-height:104px; float:left;">
-                <a href="http://www.jetsetmag.com" title="Jetset Magazine"><img src="http://www.jetsetmag.com/images/jetset-clicker.png" alt="Jetset Magazine" style="border:none; width:250px; height:104px;" width="250" height="104" border="0" /></a>
+                <a href="#" title="#"><img src="#" alt="#" style="border:none; width:250px; height:104px;" width="250" height="104" border="0" /></a>
             </div><!-- END Center Head -->
             
             <!-- Right Head -->
@@ -441,16 +429,9 @@ $(document).ready(function() {
         <div class="marketplace2">
             <div style="width:inherit; margin-left:auto; margin-right:auto;">
 				<ul id="nav">
-					<li><a href="http://www.jetsetmag.com/index.html" title="Home"><strong>&nbsp;&nbsp;HOME&nbsp;&nbsp;</strong></a></li>
-					<li><a href="http://www.jetsetmag.com/about.html"><strong>ABOUT</strong></a></li>
-					<li><a href="http://www.jetsetmag.com/marketplace.html"><strong>MARKETPLACE</strong></a></li>
-					<li><a href="http://www.jetsetmag.com/newsroom"><strong>NEWSROOM</strong></a></li>
-					<li><a href="http://www.jetsetmag.com/top-5.html"><strong>TOP 5</strong></a></li>
-					<li><a href="http://www.jetsetmag.com/jetset-tv.html"><strong>JETSET TV</strong></a></li>
-					<li><a href="http://www.jetsetmag.com/events.html"><strong>EVENTS</strong></a></li>
-					<li><a href="http://www.jetsetmag.com/subscribe.html"><strong>SUBSCRIBE</strong></a></li>
-					<li><a href="http://www.jetsetmag.com/advertise.html"><strong>ADVERTISE</strong></a></li>
-					<li><a href="http://www.jetsetmag.com/contact.html"><strong>CONTACT</strong></a></li>
+					<li><a href="#" title="Home"><strong>&nbsp;&nbsp;HOME&nbsp;&nbsp;</strong></a></li>
+					<li><a href="#"><strong>ABOUT</strong></a></li>
+					<li><a href="#"><strong>CONTACT</strong></a></li>
 				</ul>
 			</div>
             
@@ -459,21 +440,7 @@ $(document).ready(function() {
         
                 <hr style="color: #d5d5d5; background-color: #d5d5d5; width:925px; height:1px; margin-top: 7px; margin-bottom:5px;" />
                 
-                <a href="http://www.jetsetmag.com/art.html" class="subnav">ART</a> &middot;  
-                <a href="http://www.jetsetmag.com/autos.html" class="subnav">AUTOS</a> &middot; 
-                <a href="http://www.jetsetmag.com/aviation.html" class="subnav">AVIATION</a> &middot;
-                <a href="http://www.jetsetmag.com/dining.html" class="subnav">DINING</a> &middot;
-                <a href="http://www.jetsetmag.com/executive-services.html" class="subnav">EXECUTIVE</a> &middot;
-                <a href="http://www.jetsetmag.com/fashion.html" class="subnav">FASHION</a> &middot;
-                <a href="http://www.jetsetmag.com/golf.html" class="subnav">GOLF</a> &middot;
-                <a href="http://www.jetsetmag.com/health.html" class="subnav">HEALTH</a> &middot;
-                <a href="http://www.jetsetmag.com/home-design.html" class="subnav">HOME D&Eacute;COR</a> &middot;
-                <a href="http://www.jetsetmag.com/outdoors.html" class="subnav">OUTDOORS</a> &middot;
-                <a href="http://www.jetsetmag.com/real-estate.html" class="subnav">REAL ESTATE</a> &middot; 
-                <a href="http://www.jetsetmag.com/travel.html" class="subnav">TRAVEL</a> &middot;
-                <a href="http://www.jetsetmag.com/watches.html" class="subnav">WATCHES &amp; JEWELRY</a> &middot; 
-                <a href="http://www.jetsetmag.com/wine-and-spirits.html" class="subnav">WINE &amp; SPIRITS</a> &middot; 
-                <a href="http://www.jetsetmag.com/yachts.html" class="subnav">YACHTS</a>
+              
                 
             </div><!-- END Category Navagation -->
         
