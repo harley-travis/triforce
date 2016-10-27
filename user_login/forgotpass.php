@@ -34,26 +34,6 @@ error_reporting (E_ALL ^ E_NOTICE);
     xmlns:fb="http://www.facebook.com/2008/fbml"
 >
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=9" />
-<meta name="msvalidate.01" content="BE6B07CFCAE9A97DCFB0D7B999231CCF" />
-<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW" />
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<meta http-equiv="PICS-Label" content='(PICS-1.1 "http://www.classify.org/safesurf/" L gen true for "http://www.jetsetmag.com" r (SS~~000 1))' />
-<link rel="shortcut icon" href="http://www.jetsetmag.com/favicon.ico" />
-<link rel="icon" type="image/gif" href="http://www.jetsetmag.com/j.gif" />
-<link rel="stylesheet" type="text/css" href="index.css" />
-<link href="login.css" rel="stylesheet" type="text/css" />
-<link rel="stylesheet" href="forms/handheld.css" media="only screen and (max-device width:480px)"/>
-<title>Forgot Password - Jetset</title>
-<script src="forms/Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
-<meta name="description" content="Private Jet Magazine, Jetset Magazine is a luxury magazine which caters exclusively to the wealthiest demographic in the world. Readers include private jet owners, luxury yacht owners, professional athletes, A-list celebrities, Fortune 500 business owners, CEOs, entrepreneurs and politicians." />
-<meta name="keywords" content="private jet magazine, jetset magazine, luxury magazines, jetsetter, jetset, luxury lifestyle magazine, affluent magazine, wealthy magazine, jetset mag, affluent lifestyle," />
-
-<meta property="og:title" content="Jetset Magazine" />
-<meta property="og:description" content="Jetset Magazine is a luxury lifestyle magazine which caters exclusively to the wealthiest demographic in the world. Our readers include private jet owners and jetsetters, luxury yacht owners, professional athletes, A-list celebrities, Fortune 500 business owners, CEOs, entrepreneurs and politicians." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://www.jetsetmag.com" />
-<meta property="og:image" content="http://www.jetsetmag.com/images/logo500.jpg" />
 
 <style>
 #table {
@@ -102,7 +82,7 @@ $(function () {
 
 <div class="wrap" style="min-height:1100px;"><!-- Start Wrap -->       
 
-<a href="http://jetsetmag.com"><p style="text-align:center; font-size:18px; font-weight:bold; padding-left:10px; padding-right:10px; padding-top:10px;"><img src="images/jetset-register.png" style="border:none;" /></p></a>
+<a href="#"><p style="text-align:center; font-size:18px; font-weight:bold; padding-left:10px; padding-right:10px; padding-top:10px;"><img src="#" style="border:none;" /></p></a>
 
 <h3>Forgot Password</h3>
 <p style="text-align:center; padding-left:10px; padding-right:10px; width:850px; margin-left:25px; margin-right:25px;">Fill out the form below to reset your password.</p>
@@ -156,14 +136,14 @@ $(function () {
 								$numrows = mysql_num_rows($query);
 								if($numrows == 1){
 									//create email if it reset
-									$webmaster = "digital@jetsetmag.com";
-									$headers = "From: Jetset Magazine<$webmaster>";
+									$webmaster = "support@whitejuly.com";
+									$headers = "From: White July<$webmaster>";
 									$subject = "Your new password";
 									$message = "Your password has been reset. Your new password is found below. If you didn't request a new password, please contact us. \n \n";
 									$message .= "Password: $pass \n"; 
 									//check if email actually was sent
 									if( mail($email, $subject, $message, $headers) ){
-										echo "<span style='color:red;'>Your password has been reset. An email has been sent with your new password. <br /> Click <a href='http://www.jetsetmag.com'>here</a> to log in</span>";
+										echo "<span style='color:red;'>Your password has been reset. An email has been sent with your new password. <br /> Click <a href='#'>here</a> to log in</span>";
 										
 									}
 									else
