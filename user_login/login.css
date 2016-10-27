@@ -1,0 +1,118 @@
+.strength-indicator {
+width: 200px;
+height: 50px;
+position: absolute;
+padding: 8px 8px 8px 1px;
+margin-left: -5px;
+margin-top: -19px;
+}
+.strength-indicator
+{
+	line-height: 18px;
+}
+.meter
+{
+	display: block;
+	width: 160px;
+	height: 14px;
+	background-color: transparent;
+	font-size: 12px;
+	padding: 2px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	margin-bottom: 15px;
+}
+.strong
+{
+	background-color: Green;
+	background: green; /* Old browsers */
+	height:0px;
+	width:150px;
+	margin-left: 15px;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff00', endColorstr='#218400',GradientType=1 ); /* IE6-9 */
+	background: linear-gradient(left, #ffff00 0%,#218400 100%); /* W3C */
+}
+.medium
+{
+	background-color: orange;
+	background: orange; /* Old browsers */
+	height:0px;
+	margin-left: 15px;;
+	width:90px;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff00', endColorstr='#f98900',GradientType=1 ); /* IE6-9 */
+	background: linear-gradient(left, #ffff00 0%,#f98900 100%); /* W3C */
+}
+.week
+{
+	background-color: yellow;
+	background: red; /* Old browsers */
+	height:0px;
+	width:45px;
+	margin-left: 15px;
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff00', endColorstr='#fc1d00',GradientType=1 ); /* IE6-9 */
+	background: linear-gradient(left, #ffff00 0%,#fc1d00 100%); /* W3C */
+}
+.no-match
+{
+	color: #FF7B78 !important;
+}
+.password-container {
+width: 600px;
+padding: 4px;
+position: relative;
+margin-left: -3px;
+}
+.password-container p
+{
+	margin: 0;
+	padding: 0;
+	margin-top: 8px;
+}
+.password-container p label {
+text-align: right;
+display: inline-block;
+width: 293px;
+color: white;
+font-family: Verdana, Geneva, sans-serif;
+font-size: 16px;
+}
+.password-container p input[type=password] {
+width: 212px;
+height: 19px;
+background-color: white;
+-moz-border-radius: 4px;
+color: black;
+font-size: 24px;
+}
+.password-container .info
+{
+	display: block;
+	color: Gray;
+	margin-left: 134px;
+}
+
+.submit-button.locked {
+margin-left: 76px;
+text-transform: uppercase;
+text-decoration: none;
+}
+.error {
+color: red;
+}
+#info {
+width: 350px;
+margin-left: 55px;
+float: right;
+margin-top: -98px;
+}
+input[type="text"] {
+width: 204px;
+padding: 3px;
+}
+.ast {
+color: red;
+float: right;
+margin-top: -29px;
+margin-right: 26px;
+}
