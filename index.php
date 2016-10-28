@@ -10,19 +10,6 @@
     }
     
     
-    function ring(){
-    
-        // grab all the final values
-        // input into array
-        // return array to php function
-        
-        
-        // global array -> send to php
-        var ringArray = new Array();
-        
-    }
-    
-
     function bandOptions(){
         
         // open the request
@@ -73,7 +60,7 @@
                 var bandIdValue = $(bandId).html();
                 
                 //return final value
-                //return bandIdValue;
+                //return bandIdValue;      
                 
               console.log(bandIdValue);
             });
@@ -197,11 +184,11 @@
         
     }
     
-    function cutOptions(){
+    function cutOptions(cutIdValue){
         
         // open the request
         request.open('GET', 'ringOptions.xml');
-        
+  
         request.onreadystatechange = function(){
         if ((request.readyState === 4 ) && (request.status === 200)){
             
@@ -245,19 +232,67 @@
                 var cutId = "#"+clickedCutId;
                 // grabs the value from the ID
                 var cutIdValue = $(cutId).html();
-                
-                //return final value
-                //return bandIdValue;
-                
-              console.log(cutIdValue);
+                //return to parent function
+                cutOptions(cutIdValue);
+                // show that its working
+                console.log(cutIdValue);
+            });
+
+            // store cutIdValue
+            var idz = cutIdValue;
+            console.log(idz+" got it");
+            console.log("work");
+
+            //return idz;
+            // send to rings 
+            //ring(idz);
+            
+        }            
+    }
+    request.send();
+    }
+    
+
+    
+
+    
+    
+        function ring(){
+
+            var zelda = cutOptions(idz);
+            console.log(zelda+" triforce");
+            //var bandIdValue = bandIdValue;
+            var cutIdValue = cutOptions(cutIdValue);
+            document.write(cutIdValue);
+            // grab all the final values
+            // input into array
+            // return array to php function
+
+            //ringObj = new Array;
+            //ringObj.cut = cutIdValue;
+            //ringObj.color = bandIdValue;
+            //ringObj.stone = bandIdValue;
+            //ringObj.cut = bandIdValue;
+
+
+            // global array -> send to php
+            //var ringArray = new Array();
+
+
+            // object
+           // obj = new Object;
+            //obj.car = "honda";
+            //obj.animal = "cat";
+
+            console.log(cutIdValue+" ringObj displaying");
+            
+            // pass array to php
+            var json = jsObj2phpObj(ringObj);
+            $.post('json.php', {json:json}, function(data){
+                console.log(data);
             });
 
         }
-
-    }
-    request.send();
-       
-    }
     
     
         
