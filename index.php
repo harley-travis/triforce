@@ -8,8 +8,7 @@
     } else {
         request = new ActiveXObject("Mirosoft.XMLHTTP");
     }
-    
-    
+
     function bandOptions(){
         
         // open the request
@@ -59,8 +58,8 @@
                 // grabs the value from the ID
                 var bandIdValue = $(bandId).html();
                 
-                //return final value
-                //return bandIdValue;      
+                // send value to ringArray
+                ringArray(bandIdValue);
                 
               console.log(bandIdValue);
             });
@@ -116,8 +115,8 @@
                 // grabs the value from the ID
                 var colorIdValue = $(colorId).html();
                 
-                //return final value
-                //return stoneIdValue;
+                // send value to ringArray
+                ringArray(colorIdValue);
                 
               console.log(colorIdValue);
             });
@@ -172,8 +171,8 @@
                 // grabs the value from the ID
                 var stoneIdValue = $(stoneId).html();
                 
-                //return final value
-                //return stoneIdValue;
+                // send value to ringArray
+                ringArray(stoneIdValue);
                 
               console.log(stoneIdValue);
             });
@@ -184,11 +183,11 @@
         
     }
     
-    function cutOptions(cutIdValue){
+    function cutOptions(){
         
         // open the request
         request.open('GET', 'ringOptions.xml');
-  
+        
         request.onreadystatechange = function(){
         if ((request.readyState === 4 ) && (request.status === 200)){
             
@@ -228,86 +227,43 @@
                 
                 //locates the ID name from the class
                 var clickedCutId = $(this).attr("id");
+                
                 // adds the # sign to the ID
                 var cutId = "#"+clickedCutId;
+                
                 // grabs the value from the ID
                 var cutIdValue = $(cutId).html();
-                //return to parent function
-                cutOptions(cutIdValue);
-                // show that its working
+                
+                // send value to ringArray
+                ringArray(cutIdValue);
+                
+                // make sure it's working
                 console.log(cutIdValue);
             });
 
-            // store cutIdValue
-            var idz = cutIdValue;
-            console.log(idz+" got it");
-            console.log("work");
+        }
 
-            //return idz;
-            // send to rings 
-            //ring(idz);
-            
-        }            
     }
     request.send();
+       
     }
     
-
     
+     function ringArray(bandIdValue, colorIdValue, stoneIdValue, cutIdValue){
+         
+         // parameters in variables
+         var band = bandIdValue;
+         var color = colorIdValue;
+         
+         console.log(colorIdValue+ " from ringArray");
 
-    
-    
-        function ring(){
-
-            var zelda = cutOptions(idz);
-            console.log(zelda+" triforce");
-            //var bandIdValue = bandIdValue;
-            var cutIdValue = cutOptions(cutIdValue);
-            document.write(cutIdValue);
-            // grab all the final values
-            // input into array
-            // return array to php function
-
-            //ringObj = new Array;
-            //ringObj.cut = cutIdValue;
-            //ringObj.color = bandIdValue;
-            //ringObj.stone = bandIdValue;
-            //ringObj.cut = bandIdValue;
-
-
-            // global array -> send to php
-            //var ringArray = new Array();
-
-
-            // object
-           // obj = new Object;
-            //obj.car = "honda";
-            //obj.animal = "cat";
-
-            console.log(cutIdValue+" ringObj displaying");
-            
-            // pass array to php
-            var json = jsObj2phpObj(ringObj);
-            $.post('json.php', {json:json}, function(data){
-                console.log(data);
-            });
-
-        }
-    
-    
-        
-        // associative array for ring
-        var ring = new Array();
-        ring['band'] = "basic";
-        ring['color'] = "silver";
-        ring['stone'] = "diamond";
-        ring['cut'] = "cut";
-    
-        // object
-        obj = new Object;
-        obj.car = "honda";
-        obj.animal = "cat";
-
+         // array -> send to php 
+         var ring = new Array();
+         ring['band'] = band;
+         ring['color'] = band;
+         ring['stone'] = band;
+         ring['cut'] = band;
+                  
         // pass array to php
         var json = jsObj2phpObj(ring);
         $.post('json.php', {json:json}, function(data){
@@ -333,6 +289,11 @@
             }
             return json.substr(0, json.length-1) + "}";
         }
+          
+    }
+    
+
+    
     
 </script>
 
