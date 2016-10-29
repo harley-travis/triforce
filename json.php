@@ -3,7 +3,7 @@
 //json
 $ring = jsonString2Obj($_POST['json']);
 
-echo $ring->band;
+print_r($ring);
 
 
 
