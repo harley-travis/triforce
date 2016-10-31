@@ -1,11 +1,9 @@
 <?php
 
-//json
-$ring = jsonString2Obj($_POST['json']);
+//recieve Javascript array via json magic
+$ringArray = jsonString2Obj($_POST['json']);
 
-print_r($ring);
-
-
+print_r($ringArray);
 
 
 function jsonString2Obj($str){

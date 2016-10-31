@@ -8,6 +8,9 @@
     } else {
         request = new ActiveXObject("Mirosoft.XMLHTTP");
     }
+    
+    // gloable array to store in XML data
+    var ringArray = []; 
 
     function bandOptions(){
         
@@ -59,7 +62,8 @@
                 var bandIdValue = $(bandId).html();
                 
                 // send value to ringArray
-                ringArray(bandIdValue);
+                //ringArray(bandIdValue);
+                ringArray.push(ringArray['band'] = bandIdValue);
                 
               console.log(bandIdValue);
             });
@@ -116,7 +120,8 @@
                 var colorIdValue = $(colorId).html();
                 
                 // send value to ringArray
-                ringArray(colorIdValue);
+                //ringArray(colorIdValue);
+                ringArray.push(ringArray['color'] = colorIdValue);
                 
               console.log(colorIdValue);
             });
@@ -172,7 +177,8 @@
                 var stoneIdValue = $(stoneId).html();
                 
                 // send value to ringArray
-                ringArray(stoneIdValue);
+                //ringArray(stoneIdValue);
+                ringArray.push(ringArray['stone'] = stoneIdValue);
                 
               console.log(stoneIdValue);
             });
@@ -235,7 +241,8 @@
                 var cutIdValue = $(cutId).html();
                 
                 // send value to ringArray
-                ringArray(cutIdValue);
+                //ringArray(cutIdValue);
+                ringArray.push(ringArray['cut'] = cutIdValue);
                 
                 // make sure it's working
                 console.log(cutIdValue);
@@ -247,25 +254,16 @@
     request.send();
        
     }
+        
+    function passArray(){
     
+        // store the array into a value
+        var arrayList = document.getElementById("options").value = ringArray;
     
-     function ringArray(bandIdValue, colorIdValue, stoneIdValue, cutIdValue){
-         
-         // parameters in variables
-         var band = bandIdValue;
-         var color = colorIdValue;
-         
-         console.log(colorIdValue+ " from ringArray");
-
-         // array -> send to php 
-         var ring = new Array();
-         ring['band'] = band;
-         ring['color'] = band;
-         ring['stone'] = band;
-         ring['cut'] = band;
-                  
+        // if statment to check that there is only one array from each function
+        
         // pass array to php
-        var json = jsObj2phpObj(ring);
+        var json = jsObj2phpObj(arrayList);
         $.post('json.php', {json:json}, function(data){
             console.log(data);
         });
@@ -289,16 +287,10 @@
             }
             return json.substr(0, json.length-1) + "}";
         }
-          
     }
-    
 
-    
-    
+        
 </script>
-
-    
-
 
 
 <ul>
@@ -374,6 +366,8 @@ switch ($ring){
 //echo '<pre>', print_r($ring, true), '</pre>';
 
 ?>
+
+<button onclick="passArray()">Finished</button>
 
 <div id="options"></div>
 
