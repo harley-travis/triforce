@@ -1,23 +1,69 @@
-<CATALOG>
+<?xml version="1.0" encoding="UTF-8"?>
+<RING>
     <BANDTYPE>
-        <BAND>Basic</BAND>
-        <BAND>Thin</BAND>
-        <BAND>Large</BAND>
+        <BANDNAME>Basic</BANDNAME>
+        <BANDPRICE>1000</BANDPRICE>
+        <BANDIMG>basicBand.png</BANDIMG>
     </BANDTYPE>
+    <BANDTYPE>
+        <BANDNAME>Thin</BANDNAME>
+        <BANDPRICE>1500</BANDPRICE>
+        <BANDIMG>basicBand.png</BANDIMG>
+    </BANDTYPE>
+    <BANDTYPE>
+        <BANDNAME>Large</BANDNAME>
+        <BANDPRICE>2000</BANDPRICE>
+        <BANDIMG>basicBand.png</BANDIMG>
+    </BANDTYPE>
+    
+    
     <COLORTYPE>
-        <COLOR>Rose Gold</COLOR>
-        <COLOR>Silver</COLOR>
-        <COLOR>Gold</COLOR>
+        <COLORNAME>Rose Gold</COLORNAME>
+        <COLORPRICE>500</COLORPRICE>
+        <COLORIMG>roseGold.png</COLORIMG>
     </COLORTYPE>
+    <COLORTYPE>
+        <COLORNAME>Silver</COLORNAME>
+        <COLORPRICE>400</COLORPRICE>
+        <COLORIMG>roseGold.png</COLORIMG>
+    </COLORTYPE>
+    <COLORTYPE>
+        <COLORNAME>Gold</COLORNAME>
+        <COLORPRICE>700</COLORPRICE>
+        <COLORIMG>roseGold.png</COLORIMG>
+    </COLORTYPE>
+    
+    
     <STONETYPE>
-        <STONE>Diamond</STONE>
-        <STONE>Fake</STONE>
-        <STONE>Ruby</STONE>
+        <STONENAME>Diamond</STONENAME>
+        <STONEPRICE>1000</STONEPRICE>
+        <STONEIMG>diamond.png</STONEIMG>
     </STONETYPE>
+    <STONETYPE>
+        <STONENAME>Fake</STONENAME>
+        <STONEPRICE>100</STONEPRICE>
+        <STONEIMG>diamond.png</STONEIMG>
+    </STONETYPE>
+    <STONETYPE>
+        <STONENAME>Ruby</STONENAME>
+        <STONEPRICE>500</STONEPRICE>
+        <STONEIMG>diamond.png</STONEIMG>
+    </STONETYPE>
+    
+    
     <CUTTYPE>
-        <CUT>Princess</CUT>
-        <CUT>Square</CUT>
-        <CUT>Opal</CUT>
-        <CUT>Test</CUT>
+        <CUTNAME>Princess</CUTNAME>
+        <CUTPRICE>200</CUTPRICE>
+        <CUTIMG>princess.png</CUTIMG>
     </CUTTYPE>
-</CATALOG>
+    <CUTTYPE>
+        <CUTNAME>Square</CUTNAME>
+        <CUTPRICE>100</CUTPRICE>
+        <CUTIMG>princess.png</CUTIMG>
+    </CUTTYPE>
+    <CUTTYPE>
+        <CUTNAME>Opal</CUTNAME>
+        <CUTPRICE>150</CUTPRICE>
+        <CUTIMG>princess.png</CUTIMG>
+    </CUTTYPE>
+</RING>
