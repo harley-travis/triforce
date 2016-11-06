@@ -12,24 +12,36 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         
     </head>
-    <body>
+    <body>   
     
-        <ul>
-            <li><span onclick="bandOptions()" >Band Options</span></li>
-            <li><span onclick="colorOptions()" >Color Options</span></li>
-            <li><span onclick="stoneOptions()" >Stone Options</span></li>
-            <li><span onclick="cutOptions()" >Cut Options</span></li>
-        </ul>
         
-        <p>Select and option</p>
-        
-        <button onclick="passArray()">Finished</button>
-        
+		<span onclick="bandOptions()" >Customize Your Own Ring</span>
+         
         <div id="options"></div>
+        <div class="bandOutput">
+			<div id="band-btns"></div>
+        </div>        
+        <div class="colorOutput">
+        	<div id="color-btns"></div>
+        </div>        
+        <div class="stoneOutput">
+        	<div id="stone-btns"></div>
+        </div>        
+        <div class="cutOutput">
+        	<div id="cut-btns"></div>
+        </div>        
         <div class="output"></div>        
         
         <!-- JS LIBRARIES -->
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
         <script src="dataSelects.js"></script>
+        
+        <script>
+
+			$(document).ready(function(){
+				
+			});
+		</script>
+        
     </body>
 </html>

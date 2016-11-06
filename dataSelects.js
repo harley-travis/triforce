@@ -13,6 +13,13 @@ function bandOptions(){
             // If one has been select, select. another option selected, remove the previous selectment
             // **************************************************************************
 
+			// display the content
+			//$('.bandOutput').show();
+			
+			// display next button
+			var btns ='<button type="button" onClick="colorOptions()">Next</button>';
+			document.getElementById("band-btns").innerHTML = btns;
+				
             //loop through each bandtype
             $(data).find('RING BANDTYPE').each(function(){
 
@@ -21,8 +28,8 @@ function bandOptions(){
                 var bandImg   = $(this).find('BANDIMG').text();
                 var bandPrice = $(this).find('BANDPRICE').text();
 
-                // output into a list
-                $('.output').append(
+                // output to this specific output
+                $('.bandOutput').append(
                     $('<li />', {            
                         html: '<img src="img/'+bandImg+'" class="band-img" /> <br />' + '<a href="#" class="band_this" id="band-'+bandName+'">'+bandName+'</a>' + '<br />' + 'price: ' + bandPrice
                     })
@@ -48,7 +55,7 @@ function bandOptions(){
 
         },
         error: function(){
-            console.log("WARNING: Error > bandOptions: Failed to retrive XML data. Please try again.");
+            console.log("WARNING: bandOptions(): Failed to retrive XML data. Please try again.");
         }
 
     });
@@ -66,6 +73,13 @@ function colorOptions(){
             // NEED TO CREATE IF STATEMENT
             // If one has been select, select. another option selected, remove the previous selectment
             // **************************************************************************
+				
+			// hide band options
+			$(".bandOutput").hide();
+
+			// display next/prev button
+			var btns ='<div class="container btn-wrapper"><div class="prev-btn"><button type="button" onClick="bandOptions()">Go Back</button></div><div class="next-btn"><button type="button" onClick="stoneOptions()">Next</button></div></div>';
+			document.getElementById("color-btns").innerHTML = btns;
 
             //loop through each bandtype
             $(data).find('RING COLORTYPE').each(function(){
@@ -75,8 +89,8 @@ function colorOptions(){
                 var colorImg   = $(this).find('COLORIMG').text();
                 var colorPrice = $(this).find('COLORPRICE').text();
 
-                // output into a list
-                $('.output').append(
+                // output to this specific output
+                $('.colorOutput').append(
                     $('<li />', {            
                         html: '<img src="img/'+colorImg+'" class="band-img" /> <br />' + '<a href="#" class="color_this" id="band-'+colorName+'">'+colorName+'</a>' + '<br />' + 'price: ' + colorPrice
                     })
@@ -96,13 +110,13 @@ function colorOptions(){
                 // send value to ringArray
                 //ringArray(colorIdValue);
                 ringArray.push(ringArray['color'] = colorIdValue);
-
+				
               console.log(colorIdValue);
             });
 
         },
         error: function(){
-            console.log("WARNING: Error > colorOptions: Failed to retrive XML data. Please try again.");
+            console.log("WARNING: colorOptions(): Failed to retrive XML data. Please try again.");
         }
 
     });
@@ -121,6 +135,13 @@ function stoneOptions(){
             // If one has been select, select. another option selected, remove the previous selectment
             // **************************************************************************
 
+			// hide color options
+			$(".colorOutput").hide();
+			
+			// display next/prev button
+			var btns ='<div class="container btn-wrapper"><div class="prev-btn"><button type="button" onClick="colorOptions()">Go Back</button></div><div class="next-btn"><button type="button" onClick="cutOptions()">Next</button></div></div>';
+			document.getElementById("stone-btns").innerHTML = btns;
+
             //loop through each bandtype
             $(data).find('RING STONETYPE').each(function(){
 
@@ -129,8 +150,8 @@ function stoneOptions(){
                 var stoneImg   = $(this).find('STONEIMG').text();
                 var stonePrice = $(this).find('STONEPRICE').text();
 
-                // output into a list
-                $('.output').append(
+                // output to this specific output
+                $('.stoneOutput').append(
                     $('<li />', {            
                         html: '<img src="img/'+stoneImg+'" class="band-img" /> <br />' + '<a href="#" class="stone_this" id="band-'+stoneName+'">'+stoneName+'</a>' + '<br />' + 'price: ' + stonePrice
                     })
@@ -150,13 +171,13 @@ function stoneOptions(){
                 // send value to ringArray
                 //ringArray(stoneIdValue);
                 ringArray.push(ringArray['stone'] = stoneIdValue);
-
+				
               console.log(stoneIdValue);
             });
 
         },
         error: function(){
-            console.log("WARNING: Error > stoneOptions: Failed to retrive XML data. Please try again.");
+            console.log("WARNING: stoneOptions(): Failed to retrive XML data. Please try again.");
         }
 
     });
@@ -175,6 +196,13 @@ function cutOptions(){
             // If one has been select, select. another option selected, remove the previous selectment
             // **************************************************************************
 
+			// hide band options
+			$(".stoneOutput").hide();
+			
+			// display next/prev button
+			var btns ='<div class="container btn-wrapper"><div class="prev-btn"><button type="button" onClick="stoneOptions()">Go Back</button></div><div class="next-btn"><button type="button" onClick="passArray()">Finish</button></div></div>';
+			document.getElementById("cut-btns").innerHTML = btns;
+			
             //loop through each bandtype
             $(data).find('RING CUTTYPE').each(function(){
 
@@ -183,8 +211,8 @@ function cutOptions(){
                 var cutImg   = $(this).find('CUTIMG').text();
                 var cutPrice = $(this).find('CUTPRICE').text();
 
-                // output into a list
-                $('.output').append(
+                // output to this specific output
+                $('.cutOutput').append(
                     $('<li />', {            
                         html: '<img src="img/'+cutImg+'" class="band-img" /> <br />' + '<a href="#" class="cut_this" id="band-'+cutName+'">'+cutName+'</a>' + '<br />' + 'price: ' + cutPrice
                     })
@@ -213,7 +241,7 @@ function cutOptions(){
 
         },
         error: function(){
-            console.log("WARNING: Error > cutOptions: Failed to retrive XML data. Please try again.");
+            console.log("WARNING: cutOptions(): Failed to retrive XML data. Please try again.");
         }
 
     });
