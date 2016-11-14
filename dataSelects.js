@@ -1,4 +1,4 @@
-// gloable array to store in XML data
+// globle array to store in XML data
 var ringArray = []; 
 
 function bandOptions(){
@@ -7,11 +7,6 @@ function bandOptions(){
         url: 'ringOptions.xml',
         dataType: 'xml',
         success: function(data){
-
-            // **************************************************************************
-            // NEED TO CREATE IF STATEMENT
-            // If one has been select, select. another option selected, remove the previous selectment
-            // **************************************************************************
 
 			// display the content
 			//$('.bandOutput').show();
@@ -68,12 +63,7 @@ function colorOptions(){
         url: 'ringOptions.xml',
         dataType: 'xml',
         success: function(data){
-
-            // **************************************************************************
-            // NEED TO CREATE IF STATEMENT
-            // If one has been select, select. another option selected, remove the previous selectment
-            // **************************************************************************
-				
+			
 			// hide band options
 			$(".bandOutput").hide();
 
@@ -130,11 +120,6 @@ function stoneOptions(){
         dataType: 'xml',
         success: function(data){
 
-            // **************************************************************************
-            // NEED TO CREATE IF STATEMENT
-            // If one has been select, select. another option selected, remove the previous selectment
-            // **************************************************************************
-
 			// hide color options
 			$(".colorOutput").hide();
 			
@@ -190,11 +175,6 @@ function cutOptions(){
         url: 'ringOptions.xml',
         dataType: 'xml',
         success: function(data){
-
-            // **************************************************************************
-            // NEED TO CREATE IF STATEMENT
-            // If one has been select, select. another option selected, remove the previous selectment
-            // **************************************************************************
 
 			// hide band options
 			$(".stoneOutput").hide();

@@ -1,0 +1,352 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+@white: #fff;
+@grey: #eee;
+@lightGrey: #f5f5f5;
+@black: #38383a;
+@siteBlue: #465ac0;
+
+body {
+    font-family: Roboto,sans-serif;
+    background-image: url('img/pattern.jpg');
+    background-attachment: fixed;
+}
+
+h1{
+    font-family: 'Roboto Slab', serif;
+}
+h2{
+    font-family: 'Roboto Slab', serif;
+}
+h3{
+    font-family: 'Roboto Slab', serif;
+}
+h4,h5,h6{
+    font-family: 'Roboto Slab', serif;
+}
+h5{
+    font-size: 1.5em;
+}
+
+
+/* BS OVERIDES */
+.page-header{
+    margin: 0 !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+}
+.container-fluid{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.carousel-indicators {
+    position: relative !important;
+    bottom: 0 !important;
+    margin-top: 17px;
+    color: @white;
+    display: flex;
+    justify-content: center;
+}
+.carousel-indicators li {
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    text-indent: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    border-left: 1px solid #fff !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+.carousel-indicators li:first-child{
+    border-left: none !important;
+    padding-left: 0 !important;
+}
+label {
+    width: 100% !important;
+}
+input, button, select, textarea {
+    width: 100% !important;
+}
+.img{
+    width: 100%;
+    height: auto;
+}
+
+/* WORDPRESS OVERRIDES*/
+h3#comments {
+    display: none !important;
+}
+#div-comment-2 {
+    background: @lightGrey !important;
+    padding: 10px !important;
+}
+ol.commentlist {
+    list-style: none !important;
+    padding: 0 !important;
+}
+ul.children {
+    background: @grey !important;
+    padding: 20px 10px 10px 50px !important;
+    list-style: none !important;
+}
+img.attachment-250x250 {
+    display: none !important;
+}
+
+.top-bar{
+    background: @black;
+    color: @white;
+}
+.topBar-Wrapper{
+    text-align: right;
+    height: 40px;
+    
+    ul{
+        padding: 0;
+        margin: 0;
+    }
+    li{
+        list-style: none;
+        border-right: 1px solid #fff;
+        padding-left: 5px;
+        padding-right: 10px;
+        display: inline-block;
+        margin-top: 10px;         
+    }
+    li:first-child{
+        border-right: none;
+    }
+    li:last-child{
+        border-right: none;
+    }
+    a{
+        color: @white;
+    }
+}
+.welcome-user {
+    margin-top: 10px;
+}
+.banner-header {}
+header{
+    position: absolute;
+    z-index: 99999;
+    left: 0;
+    right: 0;
+}
+.headerWrapper{
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+h1.logoHeading a{
+    color: @white;
+}
+.nav{
+    padding: 20px 0 20px 0;
+    text-align: right;
+    
+    ul{
+        padding: 5px 0 0 0;
+        margin: 0;
+    }
+    li{
+        list-style: none;
+        display: inline-block;
+        padding: 0 7px 0 7px;
+    }
+    a{
+        color: @white;
+    }
+    
+}
+
+.below-banner{
+    background: @siteBlue;
+    height: auto;
+    
+    a{
+        color: @white;
+    }
+}
+.below-bannerWrapper{
+    text-align: center;
+    padding: 20px;
+    color: @white;
+    ul{}
+    li{
+        list-style: none;
+        display: inline-block;
+        padding: 0 7px 0 7px 0;
+        border-left: 1px soild @black;
+        text-transform: uppercase;
+    }
+    li:first-child{
+        border-left: none;
+    }
+    a{
+        color: @white;
+    }
+}
+.leftCol {
+    width: 69%;
+    float: left;
+}
+.rightCol {
+    width: 30%;
+    float: right;
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 25px;
+}
+.leftPost {
+    width: 23%;
+}
+.rightPost {
+    width: 75%;
+    margin: -25px 0 0 0;
+}
+.article-list{
+    margin-top: 31px;
+}
+img.attachment-large.size-large.wp-post-image {
+    width: 100%;
+    height: auto;
+}
+h1.article-heading {
+    margin: 0!important;
+    padding: 10px 0;
+    font-size: 2.8em;
+}
+.article-info {
+    padding-bottom: 30px;
+    font-size: 14px;
+}
+span.author {
+    color: @siteBlue;
+}
+.article-post {
+    margin-top: 31px;
+    font-size: 1.5em!important;
+    background: @white;
+    border-bottom: 2px solid @grey;
+    padding: 10px;
+}
+.user-comments {
+    background: @white;
+    padding: 10px;
+    margin: 15px 0 30px 0;
+    border-bottom: 2px solid @grey;
+}
+h3.commentsHeading {
+    padding: 5px !important;
+    margin: 5px 0 10px 0 !important;
+}
+ul.display-posts-listing {
+    padding: 0;
+    margin: 0;
+}
+li.listing-item {
+    margin: 10px;
+    padding: 25px 10px;
+    list-style: none;
+    border-bottom: 2px solid #eee;
+    display: flex;
+    flex-flow: row wrap;
+    font-family: 'Roboto Slab', serif;
+    background: @white;
+    
+    a{
+        text-transform: uppercase;
+        font-weight: 700;
+        color: @black;
+        padding-bottom: 10px;
+    }
+    a:hover{
+        text-decoration: none;
+    }
+}
+a.title {
+    width: 100%;
+    float: right;
+}
+span.excerpt-dash {
+    visibility: hidden;
+}
+.excerpt {
+    font-family: 'Roboto', sans-serif;
+    
+    a{
+        font-size: 12px !important;
+        color: @siteBlue !important;
+        padding-left: 5px;
+    }
+}
+#idTextPanel {
+    font-size: 1.5em;
+}
+.sidebarCard {
+    background: @white;
+    margin: 5px;
+    width: 100%;
+    border-bottom: 2px solid @grey;
+}
+.sidebarCardWrapper {
+    padding: 0px 20px 20px 20px;
+}
+.adSideWrapper{
+    padding: 20px;
+}
+.sidebarSocial{
+    
+    ul{
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+    }
+    li{
+        list-style: none;
+        flex: 1;
+    }
+}
+.social-img{
+    max-width: 50px;
+    width: 100%;
+}
+input.whiteInput {
+    background: @white;
+    width: auto !important;
+}
+footer {
+    padding: 30px;
+    background-color: @black;
+    color: @white;
+}
+.footerCol-Wrapper{
+    padding: 30px 0 30px 0;
+}
+.footerCol{
+    ul{
+        padding: 0;
+        margin: 0;
+    }
+    li{
+        list-style: none;
+    }
+    a{
+        color: @black * 1.9;
+        text-decoration: none;
+    }
+    a:hover{
+        color: @black *3;
+    }
+}
+.copyright-wrapper{
+    margin-top: 50px;
+}
+.copyright{
+    text-align: right;
+}

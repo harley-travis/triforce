@@ -143,7 +143,7 @@ $(function () {
 									$numrows = mysql_num_rows($query);
 									if ($numrows == 0){
 										
-										$password = md5(md5("wReit45".$getpass."45TFdd"));
+										$password = md5(md5("wReit45".$getpass."45TFdd")); // double salted
 										$date = date("F d, Y");
 										$code = md5(rand());
 										
