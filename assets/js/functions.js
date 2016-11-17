@@ -15,3 +15,7 @@ function sign_in(){
 	$('.login_wrapper').removeClass("hide").addClass("show");
 
 }
+
+function login(){
+	$('login-fail').hide();
+}

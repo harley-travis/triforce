@@ -6,7 +6,7 @@
 			<div class="row">
 				<h1 class="sign-in-header">White July</h1>
 			</div><!-- row -->	
-			<form action="." method="post" id="designer_login">
+			<form action="." method="post" id="sign-in">
 				<!-- action -->
 				<input type="hidden" name="action" value="sign-in">
 				
@@ -25,6 +25,7 @@
 				<ul>
 					<li><a href="#">Forgot Password</a></li>
 					<li><a href="#" onClick="register_account()">Register Account</a></li>
+					<li><a href="model/logout.php">Logout</a></li>
 				</ul>
 			</div><!-- bottom-links -->
 		</div><!-- login-wrapper -->
@@ -36,8 +37,7 @@
 			<div class="row">
 				<h1 class="sign-in-header">Register Account</h1>
 			</div><!-- row -->
-			<form action="." method="post" id="designer_login">
-
+			<form action="." method="post" id="register-account">
 				<!-- action -->
 				<input type="hidden" name="action" value="register-account">
 
@@ -69,6 +69,7 @@
 				<ul>
 					<li><a href="#">Forgot Password</a></li>
 					<li><a href="#" onClick="sign_in()">Sign In</a></li>
+					<li><a href="model/logout.php">Logout</a></li>
 				</ul>
 			</div><!-- bottom-links -->
 		</div><!-- register_wrapper -->

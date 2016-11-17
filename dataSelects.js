@@ -3,6 +3,10 @@ var ringArray = [];
 
 function bandOptions(){
 
+	// hide the init message
+	$('.enter-program').fadeOut();
+	$('.enter-program-sub').fadeOut();
+	
     $.ajax({
         url: 'ringOptions.xml',
         dataType: 'xml',
@@ -232,8 +236,6 @@ function passArray(){
 
     // store the array into a value
     var arrayList = document.getElementById("options").value = ringArray;
-
-    // if statment to check that there is only one array from each function
 
     // pass array to php
     var json = jsObj2phpObj(arrayList);

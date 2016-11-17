@@ -38,8 +38,6 @@
 		}else if($action == 'sign-in'){
 			// THIS SIGN IN IS TO USE THE DESIGNER, NOT FOR THE DASHBOARD
 			
-			// NEED TO ADD MORE VALIDATION. ex, email is valid, password meets requirements etc.
-			
 			$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 			$password = filter_input(INPUT_POST, 'password');
 			$_SESSON['is_valid_user'] = $email.$password;
@@ -47,7 +45,7 @@
 				$_SESSON['is_valid_user'] = true;
 				include('view/designer.php');
 			}else{
-				echo "Error: You must login to view the designer";
+				echo 'You must login to view the designer';
 				include('view/designer_login_view.php');
 			}
 			

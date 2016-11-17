@@ -1,6 +1,6 @@
 <?php 
-$lifetime = 60 * 60 * 24 * 24; // 2 weeks in seconds, idiot
-session_set_cookie_params($lifetime, '/'); // this junk does what it wants
+//$lifetime = 60 * 60 * 24 * 24; // 2 weeks in seconds, idiot
+//session_set_cookie_params($lifetime, '/'); // this junk does what it wants
 session_start(); // start pls
 
 // grab the database info suckas

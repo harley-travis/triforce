@@ -47,9 +47,13 @@ h1.sign-in-header {
   border-right: none;
   padding-left: 2px;
 }
-.enter-program {
+.enter-message {
   font-family: "coolvetica";
   text-align: center;
   cursor: pointer;
   color: #337ab7;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
