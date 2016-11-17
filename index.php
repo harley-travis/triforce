@@ -43,11 +43,16 @@
 			$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 			$password = filter_input(INPUT_POST, 'password');
 			$_SESSON['is_valid_user'] = $email.$password;
+			
 			if(designer_login($email, $password)){
 				$_SESSON['is_valid_user'] = true;
 				include('view/designer.php');
 			}else{
-				echo "Error: You must login to view the designer";
+				echo "<div class='alert alert-danger alert-dismissible' role='alert'>
+						<button type='button' class='close' data-dismiss='alert' aria-label='Close'> 
+							<span aria-hidden='true'>&times;</span>
+						</button>
+							<strong>Error:</strong> You must login to view the designer</div>";
 				include('view/designer_login_view.php');
 			}
 			

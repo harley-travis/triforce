@@ -3,9 +3,12 @@
 //session_set_cookie_params($lifetime, '/'); // this junk does what it wants
 session_start(); // start pls
 
+// redirect to a secure connection
+require_once('model/secure_conn.php');
+
 // grab the database info suckas
-require('model/database.php');
-require('model/designer_login.php');
+require_once('model/database.php');
+require_once('model/designer_login.php');
 
 ?>
 <!DOCTYPE html>

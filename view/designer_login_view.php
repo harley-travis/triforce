@@ -1,4 +1,4 @@
-<?php //include('../header.php') ?>
+<?php //require_once('model/secure_conn.php'); ?>
 
 <div class="container-fluid login_block">
 	<div class="container">
