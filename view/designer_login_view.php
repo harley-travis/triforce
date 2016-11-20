@@ -24,7 +24,7 @@
 			<div class="bottom-links">
 				<ul>
 					<li><a href="#">Forgot Password</a></li>
-					<li><a href="#" onClick="register_account()">Register Account</a></li>
+<!--					<li><a href="#" onClick="register_account()">Register Account</a></li>-->
 					<li><a href="model/logout.php">Logout</a></li>
 				</ul>
 			</div><!-- bottom-links -->

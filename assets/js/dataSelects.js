@@ -8,7 +8,7 @@ function bandOptions(){
 	$('.enter-program-sub').fadeOut();
 	
     $.ajax({
-        url: 'ringOptions.xml',
+        url: 'data/ringOptions.xml',
         dataType: 'xml',
         success: function(data){
 
@@ -19,7 +19,7 @@ function bandOptions(){
 			var btns ='<button type="button" onClick="colorOptions()">Next</button>';
 			document.getElementById("band-btns").innerHTML = btns;
 				
-            //loop through each bandtype
+            // loop through each bandtype
             $(data).find('RING BANDTYPE').each(function(){
 
                 // establish xml variables into js variables
@@ -64,7 +64,7 @@ function bandOptions(){
 function colorOptions(){
 
     $.ajax({
-        url: 'ringOptions.xml',
+        url: 'data/ringOptions.xml',
         dataType: 'xml',
         success: function(data){
 			
@@ -120,7 +120,7 @@ function colorOptions(){
 function stoneOptions(){
 
     $.ajax({
-        url: 'ringOptions.xml',
+        url: 'data/ringOptions.xml',
         dataType: 'xml',
         success: function(data){
 
@@ -176,7 +176,7 @@ function stoneOptions(){
 function cutOptions(){
 
     $.ajax({
-        url: 'ringOptions.xml',
+        url: 'data/ringOptions.xml',
         dataType: 'xml',
         success: function(data){
 
@@ -239,7 +239,7 @@ function passArray(){
 
     // pass array to php
     var json = jsObj2phpObj(arrayList);
-        $.post('json.php', {json:json}, function(data){
+        $.post('assets/php/json.php', {json:json}, function(data){
             console.log(data);
         });
 

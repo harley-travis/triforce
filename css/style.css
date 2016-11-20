@@ -5,6 +5,11 @@
 }
 /*  FONTS */
 /* COLOR */
+/* IMGS */
+.band-img {
+  width: 100%;
+  max-width: 200px;
+}
 h1.sign-in-header {
   text-align: center;
   padding-bottom: 20px;
