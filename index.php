@@ -52,29 +52,10 @@
 				include('view/designer_login_view.php');
 			}
 			
-		}else if($action == 'designer'){
-			include('view/designer.php');
-		}
-		else if($action == 'bandOptions'){
-			include('view/band.php');
-		}
-		else if($action == 'colorOptions'){
-			include('view/color.php');
-		}
-		else if($action == 'stoneOptions'){
-			include('view/stone.php');
-		}
-		else if($action == 'cutOptions'){
-			include('view/cut.php');
-		}
-		else if($action == 'finish'){
-			echo "Great! You are finished!";
-		}
-		else{ 
+		}else{ 
 			echo "ERROR: Something broke. Pls try again. Error in Controller";
 		}
 		
-
 ?>  
                 
 <?php include('view/footer.php'); ?>

@@ -15,6 +15,10 @@ h1.sign-in-header {
   padding-bottom: 20px;
   font-family: "coolvetica";
 }
+.displayPrice {
+  color: green;
+  font-weight: bold;
+}
 .hide {
   display: none;
 }

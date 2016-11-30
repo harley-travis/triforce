@@ -1,13 +1,31 @@
-<div class="cutOutput">
-	<div id="cut-btns"></div>
-</div>      
-<form>
-	<!-- action -->
-	<input type="hidden" name="action" value="stoneOptions">
-	<input type="submit" class="btn btn-primary form-control" value="Previous">
-</form>
-<form>
-	<!-- action -->
-	<input type="hidden" name="action" value="finish">
-	<input type="submit" class="btn btn-primary form-control" value="Finish">
-</form>
+
+<h1>Select a Stone Cut</h1>
+
+<div ng-controller="cutData"> 
+	<ul>
+		<li ng-repeat="cut in cuttypes">
+			
+			
+			<span href="#" id="cut-{{cut.name}}" class="cut_this">{{cut.name}}</span>
+			<span class="displayPrice">{{'$' + cut.price }}</span>
+			<img class="band-img" id="cut-{{$index+1}}" ng-src="{{cut.img}}">
+			
+		</li>
+	</ul>
+</div>
+
+
+<script>
+	
+	$(document).on("click", ".cut_this", function() {
+	  	
+		var clickedcutId = $(this).attr("id"); //locates the ID name from the class
+		var cutId = "#"+clickedcutId; // adds the # sign to the ID
+		var cutIdValue = $(cutId).html(); // grabs the value from the ID
+		ringArray.push(ringArray['cut'] = cutIdValue); // send value to ringArray
+
+	  	console.log(cutIdValue);
+   
+	});
+</script>
+

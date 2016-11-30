@@ -1,12 +1,16 @@
 // globle array to store in XML data
 var ringArray = []; 
 
-function bandOptions(){
-
+function initProgram(){
+	
 	// hide the init message
 	$('.enter-program').fadeOut();
 	$('.enter-program-sub').fadeOut();
-	
+
+}
+
+function bandOptions(){
+
     $.ajax({
         url: 'data/ringOptions.xml',
         dataType: 'xml',

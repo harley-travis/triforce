@@ -1,0 +1,19 @@
+{
+    "band": [
+        {
+            "name": "Basic",
+            "price": "1000",
+            "img": "../img/basicBand.png"
+        },
+        {
+            "name": "Thin",
+            "price": "1500",
+            "img": "../img/basicBand.png"
+         },
+        {
+            "name": "Large",
+            "price": "2000",
+            "img": "../img/basicBand.png"
+        }
+    ]
+}
