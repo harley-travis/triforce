@@ -14,6 +14,9 @@
 	</ul>
 </div>
 
+<a href="#stone" class="btn btn-primary">Previous</a>
+<a href="#inscription" class="btn btn-primary">Next</a>
+
 
 <script>
 	

@@ -13,6 +13,16 @@
 	</ul>
 </div>
 
+<div class="container clarity-options-menu" ng-controller="clarity">
+
+	<h3>Select clarity</h3>
+	<select ng-model="selectClarity" ng-options="x for x in clarity"></select>
+
+</div><!-- clarity-options-menu -->
+
+<a href="#color" class="btn btn-primary">Previous</a>
+<a href="#cut" class="btn btn-primary">Next</a>
+
 <script>
 	
 	$(document).on("click", ".stone_this", function() {

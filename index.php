@@ -52,7 +52,22 @@
 				include('view/designer_login_view.php');
 			}
 			
-		}else{ 
+		}else if($action == 'customerInfo-form'){
+			
+			echo "success!";
+			include('view/billingForm.php');
+			
+		}else if($action == 'billing-form'){
+			
+			echo "success!";
+			include('view/shippingForm.php');
+			
+		}else if($action == 'shipping-form'){
+			
+			echo "Thank you your order has been placed!";
+		}
+
+		else{ 
 			echo "ERROR: Something broke. Pls try again. Error in Controller";
 		}
 		

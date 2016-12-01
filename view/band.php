@@ -13,6 +13,15 @@
 	</ul>	
 </div>
 
+<div class="container band-options-menu" ng-controller="band-size">
+
+	<h3>Select Band Size</h3>
+	<select ng-model="selectBandSize" ng-options="x for x in sizes"></select>
+
+</div><!-- band-options-menu -->
+
+<a href="#color" class="btn btn-primary">Next</a>
+
 
 <script>
 	

@@ -13,6 +13,8 @@
 	</ul>	
 </div>
 
+<a href="#band" class="btn btn-primary">Previous</a>
+<a href="#stone" class="btn btn-primary">Next</a>
 
 <script>
 	

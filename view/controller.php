@@ -1,10 +1,5 @@
 <?php include(dirname(__FILE__)."/header.php"); ?>
 
-<a href="#/">Band</a>
-<a href="#color">Color</a>
-<a href="#stone">Stone</a>
-<a href="#cut">Cut</a>
-
 <div ng-view class="container"></div>
 
 <script>
@@ -19,14 +14,23 @@
 		.when("/", {
 			templateUrl : "band.php",
 		})
+		.when("/band", {
+			templateUrl : "band.php",
+		})
 		.when("/color", {
 			templateUrl : "color.php"
 		})
 		.when("/stone", {
 			templateUrl : "stone.php"
 		})
+		.when("/inscription", {
+			templateUrl : "inscription.php"
+		})
 		.when("/cut", {
 			templateUrl : "cut.php"
+		})
+		.when("/checkout", {
+			templateUrl : "customerInfo.php"
 		});
 	});
 	
@@ -35,6 +39,11 @@
 	  $http.get("../data/band.json").then(function (response) {
 		  $scope.bandtypes = response.data.band;
 	  });
+	});
+	
+	// BandSizes
+	app.controller('band-size', function($scope) {
+		$scope.sizes = ["4", "4.5", "5", "5.5", "6", "6.5", "7", "7.5"];
 	});
 	
 	// ColorData
@@ -51,13 +60,19 @@
 	  });
 	});
 	
+	// ClarityOptions
+	app.controller('clarity', function($scope) {
+		$scope.clarity = ["good", "really good", "too good", "you're too rich sthap"];
+	});
+	
 	// CutData
 	app.controller('cutData', function($scope, $http) {
 	  $http.get("../data/cut.json").then(function (response) {
 		  $scope.cuttypes = response.data.cut;
 	  });
 	});
-	
+
+
 	
 </script>
 
