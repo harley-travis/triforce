@@ -10,7 +10,7 @@
 					<li role="presentation"><a href="#">Reports</a></li>
 					<li role="presentation"><a href="#">Orders</a></li>
 					<li role="presentation"><a href="#">Job Status</a></li>
-					<li role="presentation"><a href="<?php echo D_ROOT; ?>/view/products/products.php">Products</a></li>
+					<li role="presentation"><a href="#">Products</a></li>
 					<li role="presentation"><a href="index.php?action=view-users">Users</a></li>
 					<li role="presentation"><a href="#">Feedback</a></li>
 					<li role="presentation"><a href="<?php echo D_ROOT; ?>/model/logout.php">Logout</a></li>

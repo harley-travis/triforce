@@ -29,10 +29,10 @@ include('./view/left-col.php');
 		</td>
 		<td>
 			
-			<form action="../../index.php" method="post">
+			<form action="<?php echo D_ROOT; ?>/index.php" method="post">
 				<input type="hidden" name="action" value="delete-user">
-				<input type="hidden" name="tenantID" value="<?php echo $user['user_id']; ?>">
-				<input type="submit" class="btn btn-danger" value="Delete">
+				<input type="hidden" name="user_id" value="<?php echo $user['user_id']; ?>">
+				<input type="submit" class="btn btn-danger" value="Delete User">
 			</form>
 			
 		</td>

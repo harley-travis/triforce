@@ -56,4 +56,36 @@ function get_user_by_id($user_id){
     return $user;
 }
 
+// edit the user
+function edit_user($user_id, $userFirstName, $userLastName, $email, $password) {
+    global $db;
+    $query = 'UPDATE users
+              SET user_id         = :user_id,
+                  user_firstName  = :userFirstName,
+                  user_lastName   = :userLastName,
+                  user_email      = :email,
+                  user_password   = :password
+              WHERE user_id       = :user_id';
+    
+    $statement = $db->prepare($query);
+    $statement->bindValue(':user_id', $user_id);
+    $statement->bindValue(':userFirstName', $userFirstName);
+    $statement->bindValue(':userLastName', $userLastName);
+    $statement->bindValue(':email', $email);
+    $statement->bindValue(':password', $password);
+    $statement->execute();
+    $statement->closeCursor();
+} 
+
+// delete the user from the db
+function delete_user($user_id){
+	global $db;
+	$query = 'DELETE FROM users
+			  WHERE user_id = :user_id';
+	$statement = $db->prepare($query);
+	$statement->bindValue(':user_id', $user_id);
+	$statement->execute();
+	$statement->closeCursor();
+}
+
 ?>

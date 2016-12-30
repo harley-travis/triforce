@@ -30,13 +30,13 @@ include('./view/left-col.php');
 		</div>
 		<div class="form-group">
 			<label for="New Password">New Password</label>
-			<input type="text" class="form-control" name="newPassword" value="New Password">
+			<input type="text" class="form-control" name="newPassword">
 		</div>
 		<div class="form-group">
 			<label for="Verify New Password">Verify New Password</label>
-			<input type="text" class="form-control" name="verifyNewPassword" value="Verify New Password">
+			<input type="text" class="form-control" name="verifyNewPassword">
 		</div>
-		<input type="submit" value="Edit User" class="btn btn-primary">
+		<input type="submit" value="Save Changes" class="btn btn-primary">
 	</form>
 </div><!-- form-wrapper -->
 
