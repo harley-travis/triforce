@@ -32,7 +32,7 @@ include('./view/left-col.php');
 			<form action="<?php echo D_ROOT; ?>/index.php" method="post">
 				<input type="hidden" name="action" value="delete-user">
 				<input type="hidden" name="user_id" value="<?php echo $user['user_id']; ?>">
-				<input type="submit" class="btn btn-danger" value="Delete User">
+				<input type="submit" class="btn btn-danger" value="Delete user">
 			</form>
 			
 		</td>
