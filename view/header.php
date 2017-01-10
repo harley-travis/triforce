@@ -33,6 +33,6 @@ require_once(DESIGNER_LOGIN);
 		<script src="<?php echo ROOT; ?>/assets/js/jquery-1.12.4.min.js"></script>
 		<script src="<?php echo ROOT; ?>/assets/js/angular-1.5.8.min.js"></script>
 		<script src="<?php echo ROOT; ?>/assets/js/angularjs-1.4.7-angular-route.js"></script>
-               
+             
     </head>
     <body ng-app="whiteJuly"> 

@@ -12,8 +12,10 @@
 		}else if($action == 'register-account'){
 			
 			// establish the variables. Then deal with it
+			//$_SESSION['username'] = $email; // put that email into a session variable hoe bag
 			$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 			$password 		=	filter_input(INPUT_POST, 'password');
+			//$encryptPass = md5(md5("qwkejrbk".$password."xckvhgb")); // double salt that ish. try and hack that junk
 			$verifyPassword = 	filter_input(INPUT_POST, 'verifyPassword');
 			$userFirstName	= 	filter_input(INPUT_POST, 'firstName');
 			$userLastName 	= 	filter_input(INPUT_POST, 'lastName');
@@ -35,44 +37,25 @@
 			
 		}else if($action == 'sign-in'){
 			// THIS SIGN IN IS TO USE THE DESIGNER, NOT FOR THE DASHBOARD
-				
+			
 			$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 			$password = filter_input(INPUT_POST, 'password');
 			$_SESSON['is_valid_user'] = $email.$password;
-			
 			if(designer_login($email, $password)){
 				$_SESSON['is_valid_user'] = true;
 				include('view/designer.php');
 			}else{
-				echo "<div class='alert alert-danger alert-dismissible' role='alert'>
-						<button type='button' class='close' data-dismiss='alert' aria-label='Close'> 
-							<span aria-hidden='true'>&times;</span>
-						</button>
-							<strong>Error:</strong> You must login to view the designer</div>";
+				echo 'You must login to view the designer';
 				include('view/designer_login_view.php');
 			}
 			
-		}else if($action == 'customerInfo-form'){
-			
-			echo "success!";
-			include('view/billingForm.php');
-			
-		}else if($action == 'billing-form'){
-			
-			echo "success!";
-			include('view/shippingForm.php');
-			
-		}else if($action == 'shipping-form'){
-			
-			echo "Thank you your order has been placed!";
-		}
-
-		else{ 
+		}else if($action == 'designer'){
+			include('view/designer.php');
+		}else{ 
 			echo "ERROR: Something broke. Pls try again. Error in Controller";
 		}
-		
-?>                
-                
+
+?>  
                 
 <?php include('view/footer.php'); ?>
 

@@ -37,19 +37,49 @@
 	// BandData
 	app.controller('bandData', function($scope, $http) {
 	  $http.get("../data/band.json").then(function (response) {
-		  $scope.bandtypes = response.data.band;
+		 
+		  $scope.bandtypes = response.data.band; // bandtypes = loop band=json
+		  
+		  $scope.bandtypes[0].productOptions;
+		  
+		  
+		  // THIS IS A LOOP FOR NESTED OBJECTS
+		 // $scope.productOptions = []; // create a global array to store in the next level of JSON data
+		  
+		  // loop through the nested json elements to repeat 
+		//  angular.forEach($scope.bandtypes, function(band){
+			//  angular.forEach(band.productOptions, function(productOptions){
+//
+				  
+				 // 	$scope.productOptions.push(productOptions);
+		//			  
+				  
+		//	  })
+		 // });
 	  });
 	});
 	
 	// BandSizes
-	app.controller('band-size', function($scope) {
-		$scope.sizes = ["4", "4.5", "5", "5.5", "6", "6.5", "7", "7.5"];
+	app.controller('band-size', function($scope, $http) {
+		$http.get("../data/band.json").then(function (response){
+			$scope.sizes = response.data.size;
+		});
+	});
+	
+	// BandCategory
+	app.controller('band-category', function($scope, $http) {
+		$http.get("../data/band.json").then(function (response) {
+			$scope.category = response.data.category;
+		});
 	});
 	
 	// ColorData
 	app.controller('colorData', function($scope, $http) {
 	  $http.get("../data/color.json").then(function (response) {
 		  $scope.colortypes = response.data.color;
+		  $scope.price = function(colorPrice){
+			  addPrice(colorPrice);
+		  };
 	  });
 	});
 	
@@ -73,7 +103,7 @@
 	});
 
 
-	
+
 </script>
 
 

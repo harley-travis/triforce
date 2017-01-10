@@ -6,9 +6,14 @@
 /*  FONTS */
 /* COLOR */
 /* IMGS */
-.band-img {
+.img {
   width: 100%;
+}
+.band-img {
   max-width: 200px;
+}
+.child-img {
+  max-width: 100px;
 }
 h1.sign-in-header {
   text-align: center;
