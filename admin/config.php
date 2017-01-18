@@ -1,7 +1,7 @@
 <?php 
 
 //define the url paths
-define("D_ROOT", "/admin");
+define("D_ROOT", "/phplearns/admin");
 
 // paths to db
 define("SECURE_CONNECTION", 	 dirname(__FILE__)."/model/secure_conn.php");
