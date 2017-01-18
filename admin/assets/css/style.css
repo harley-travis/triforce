@@ -33,6 +33,32 @@ h3.page-header {
 .dashboard-content {
   padding-top: 35px;
 }
+/* login */
+h1.sign-in-header {
+  text-align: center;
+  padding-bottom: 25px;
+}
+.login_wrapper {
+  padding: 20px;
+  width: 50%;
+  margin: 0 auto;
+}
+.bottom-links ul {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  padding-top: 10px;
+}
+.bottom-links li {
+  list-style: none;
+  padding-right: 7px;
+  border-right: 1px #38383A solid;
+  display: inline-block;
+}
+.bottom-links li:last-child {
+  border-right: none;
+  padding-left: 2px;
+}
 /* FOOTER */
 footer {
   border-top: 1px solid #eee;

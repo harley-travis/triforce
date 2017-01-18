@@ -16,7 +16,7 @@
 		}
 	}
 
-
+	// controller what to show based on users actions
 	switch ($action){
 		case 'dashboard':
 			// display the dashboard

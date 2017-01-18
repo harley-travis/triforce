@@ -2,6 +2,8 @@
 
 //define the url paths
 define("D_ROOT", "/phplearns/admin");
+// commented one below is the real rootpath
+//define("D_ROOT", "/admin");
 
 // paths to db
 define("SECURE_CONNECTION", 	 dirname(__FILE__)."/model/secure_conn.php");
