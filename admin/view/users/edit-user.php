@@ -31,6 +31,6 @@
 			<input type="text" class="form-control" name="verifyNewPassword">
 		</div>
 		<a href="<?php echo D_ROOT; ?>/view/users/index.php?action=view-users" class="btn btn-primary">Go Back</a>
-		<input type="submit" value="Save Changes" class="btn btn-primary">
+		<input type="submit" value="Save Changes" class="btn btn-success">
 	</form>
 </div><!-- form-wrapper -->

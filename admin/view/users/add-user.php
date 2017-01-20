@@ -29,7 +29,7 @@ include('../left-col.php');
 			<input type="password" class="form-control" name="verifyPassword" placeholder="Verify Password">
 		</div>
 		<a href="<?php echo D_ROOT; ?>/view/users/index.php?action=view-users" class="btn btn-primary">Go Back</a>
-		<input type="submit" value="Submit" class="btn btn-primary">
+		<input type="submit" value="Add User" class="btn btn-success">
 	</form>
 </div><!-- form-wrapper -->
 <?php include('../footer.php'); ?>

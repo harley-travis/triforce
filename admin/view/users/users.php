@@ -1,4 +1,7 @@
-<h2 class="page-header">Users</h2><a href="<?php echo D_ROOT; ?>/view/users/add-user.php" class="btn btn-success">Add User</a>
+<h2 class="page-header">Users</h2>
+
+	<a href="<?php echo D_ROOT; ?>/view/users/add-user.php" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>  Add User</a>
+	
 <table class="table table-striped table-hover">
 	<tr>
 		<th>First Name</th>
