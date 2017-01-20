@@ -1,11 +1,10 @@
-<?php 
+<?php
 include('../header.php');
-include(LEFT_COL); 
+include('../left-col.php');
 ?>
-
 <h2 class="page-header">Add user</h2>
 <div class="form-wrapper">
-	<form action="../../index.php" method="post" id="add-user">
+	<form action="<?php echo D_ROOT; ?>/view/users/index.php" method="post" id="add-user">
 	
 		<input type="hidden" name="action" value="add-user">
 		
@@ -29,8 +28,8 @@ include(LEFT_COL);
 			<label for="Verify Password">Verify Password</label>
 			<input type="password" class="form-control" name="verifyPassword" placeholder="Verify Password">
 		</div>
+		<a href="<?php echo D_ROOT; ?>/view/users/index.php?action=view-users" class="btn btn-primary">Go Back</a>
 		<input type="submit" value="Submit" class="btn btn-primary">
 	</form>
 </div><!-- form-wrapper -->
-
 <?php include('../footer.php'); ?>

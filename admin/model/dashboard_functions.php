@@ -88,4 +88,21 @@ function delete_user($user_id){
 	$statement->closeCursor();
 }
 
+//add a user
+function add_user($userFirstName, $userLastName, $email, $password){
+	global $db;
+    $query = 'INSERT INTO users
+                (user_firstName, user_lastName, user_email, user_password)
+                VALUES
+                (:userFirstName, :userLastName, :email, :password)';
+	
+	$statement = $db->prepare($query);
+	$statement->bindValue(':userFirstName', $userFirstName);
+    $statement->bindValue(':userLastName', $userLastName);
+    $statement->bindValue(':email', $email);
+    $statement->bindValue(':password', $password);
+    $statement->execute();
+    $statement->closeCursor();
+}
+
 ?>

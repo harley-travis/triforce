@@ -1,9 +1,4 @@
-<?php 
-include('./view/header.php'); 
-include('./view/left-col.php'); 
-?>
-
-<h2 class="page-header">Users</h2>
+<h2 class="page-header">Users</h2><a href="<?php echo D_ROOT; ?>/view/users/add-user.php" class="btn btn-success">Add User</a>
 <table class="table table-striped table-hover">
 	<tr>
 		<th>First Name</th>
@@ -19,7 +14,7 @@ include('./view/left-col.php');
 		<td><?php echo $user['user_email']; ?></td>
 		<td>
 			
-			<form action="<?php echo D_ROOT; ?>/index.php" method="post">
+			<form action="<?php echo D_ROOT; ?>/view/users/index.php" method="post">
 				<input type="hidden" name="action" value="edit-user-id">
 				<input type="hidden" name="user_id" value="<?php echo $user['user_id']; ?>">
 				<input type="submit" class="btn btn-primary" value="Edit user">
@@ -29,7 +24,7 @@ include('./view/left-col.php');
 		</td>
 		<td>
 			
-			<form action="<?php echo D_ROOT; ?>/index.php" method="post">
+			<form action="<?php echo D_ROOT; ?>/view/users/index.php" method="post">
 				<input type="hidden" name="action" value="delete-user">
 				<input type="hidden" name="user_id" value="<?php echo $user['user_id']; ?>">
 				<input type="submit" class="btn btn-danger" value="Delete user">
@@ -39,6 +34,3 @@ include('./view/left-col.php');
 	</tr>
 	<?php endforeach; ?>
 </table>
-
-
-<?php include('./view/footer.php'); ?>

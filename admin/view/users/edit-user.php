@@ -1,12 +1,6 @@
-<?php 
-include('./view/header.php'); 
-include('./view/left-col.php'); 
-?>
-
 <h2 class="page-header">Edit user</h2>
-
 <div class="form-wrapper">
-	<form action="<?php echo D_ROOT; ?>/index.php" method="post" id="edit-user">
+	<form action="<?php echo D_ROOT; ?>/view/users/index.php" method="post" id="edit-user">
 	
 		<input type="hidden" name="action" value="edit-user">
 		
@@ -36,8 +30,7 @@ include('./view/left-col.php');
 			<label for="Verify New Password">Verify New Password</label>
 			<input type="text" class="form-control" name="verifyNewPassword">
 		</div>
+		<a href="<?php echo D_ROOT; ?>/view/users/index.php?action=view-users" class="btn btn-primary">Go Back</a>
 		<input type="submit" value="Save Changes" class="btn btn-primary">
 	</form>
 </div><!-- form-wrapper -->
-
-<?php include('./view/footer.php'); ?>
