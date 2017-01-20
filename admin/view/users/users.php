@@ -1,6 +1,12 @@
-<h2 class="page-header">Users</h2>
+<div class="page-header">
+	<div class="col-md-6 col-xs-12 location-header">
+		<h2>Users</h2>
+	</div>
+	<div class="col-md-6 col-xs-12 page-header-btn">
+		<a href="<?php echo D_ROOT; ?>/view/users/add-user.php" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>  Add User</a>
+	</div>
+</div>
 
-	<a href="<?php echo D_ROOT; ?>/view/users/add-user.php" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>  Add User</a>
 	
 <table class="table table-striped table-hover">
 	<tr>
