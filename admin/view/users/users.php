@@ -7,7 +7,6 @@
 	</div>
 </div>
 
-	
 <table class="table table-striped table-hover">
 	<tr>
 		<th>First Name</th>
