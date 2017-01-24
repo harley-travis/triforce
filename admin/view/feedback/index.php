@@ -1,5 +1,5 @@
 <?php 
-// establish an action for the user
+	// establish an action for the user
 	$action = filter_input(INPUT_POST, 'action');
 
 	// if there is no action then show a page 
@@ -20,7 +20,7 @@
 			require_once('../../model/database.php');
 			require_once('../../model/feedback.php');
 		}else{
-			echo "Could not retrevie the database for the users page.";
+			echo "Could not retrevie the database for the feedback page.";
 		}
 
 	switch ($action){

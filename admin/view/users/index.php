@@ -12,21 +12,20 @@
 		}
 	}
 
-	// the db file is not pulling globalling in this file
+	// the db file is not pulling globally
 	// this if statement finds the action of the user
 	// then gives it a proper db connection
 	if($action == 'users'){
-			// grab the database info like you're supposed to do 
-			require_once('../model/database.php');
-			require_once('./model/dashboard_functions.php');
-		}else if($action == 'edit-user' || $action == 'edit-user-id' || $action == 'delete-user' || $action == 'add-user' || $action == 'view-users'){
-			// grab the database info like you're supposed to do 
-			require_once('../../model/database.php');
-			require_once('../../model/dashboard_functions.php');
-		}else{
-			echo "Could not retrevie the database for the users page.";
-		}
-
+		// grab the database info like you're supposed to do 
+		require_once('../model/database.php');
+		require_once('./model/dashboard_functions.php');
+	}else if($action == 'edit-user' || $action == 'edit-user-id' || $action == 'delete-user' || $action == 'add-user' || $action == 'view-users'){
+		// grab the database info like you're supposed to do 
+		require_once('../../model/database.php');
+		require_once('../../model/dashboard_functions.php');
+	}else{
+		echo "Could not retrevie the database for the users page.";
+	}
 
 	switch ($action){
 		
@@ -37,17 +36,14 @@
 			$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 			$password = filter_input(INPUT_POST, 'password');
 
-
-			if($userFirstName == NULL || $userFirstName == FALSE ||
-			  $userLastName == NULL || $userLastName == FALSE ||
-			  $email == NULL || $email == FALSE ||
-			  $password == NULL || $password == FALSE){
+			if($userFirstName == NULL || $userFirstName == FALSE ||  $userLastName == NULL || $userLastName == FALSE || $email == NULL || $email == FALSE || $password == NULL || $password == FALSE){
 
 				echo "There was an error adding a new user, please try again.";
 			}else{
 				// add the user to the db, put the data in a variable, display the page
 				add_user($userFirstName, $userLastName, $email, $password);
 				$users = get_users();
+				$subPageTitle = 'Add users';
 				include('../header.php');
 				include('../left-col.php');
 				include('users.php');
@@ -67,11 +63,7 @@
 			$password = filter_input(INPUT_POST, 'password');
 
 
-			if($user_id == NULL || $user_id == FALSE ||
-			  $userFirstName == NULL || $userFirstName == FALSE ||
-			  $userLastName == NULL || $userLastName == FALSE ||
-			  $email == NULL || $email == FALSE ||
-			  $password == NULL || $password == FALSE){
+			if($user_id == NULL || $user_id == FALSE || $userFirstName == NULL || $userFirstName == FALSE || $userLastName == NULL || $userLastName == FALSE || $email == NULL || $email == FALSE || $password == NULL || $password == FALSE){
 
 				echo "There was an error editing the user, please try again.";
 

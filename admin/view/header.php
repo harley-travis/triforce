@@ -28,5 +28,13 @@ require_once(SECURE_CONNECTION);
         <!-- JS LIBRARIES -->   
 		<script src="<?php echo D_ROOT; ?>/assets/js/jquery-1.12.4.min.js"></script>
              
+        <script>
+			
+			$(".nav a").on("click", function(){
+			   $(".nav").find(".active").removeClass("active");
+			   $(this).parent().addClass("active");
+			});
+			
+		</script>
     </head>
     <body> 

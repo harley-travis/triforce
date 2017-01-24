@@ -1,8 +1,5 @@
-<div class="page-header">
-	<div class="col-md-6 col-xs-12 location-header">
-		<h2>Users</h2>
-	</div>
-	<div class="col-md-6 col-xs-12 page-header-btn">
+<div class="pg-header">
+	<div class="page-header-btn">
 		<a href="<?php echo D_ROOT; ?>/view/users/add-user.php" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>  Add User</a>
 	</div>
 </div>

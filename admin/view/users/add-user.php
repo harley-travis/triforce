@@ -2,14 +2,7 @@
 include('../header.php');
 include('../left-col.php');
 ?>
-<div class="page-header">
-	<div class="col-md-6 col-xs-12 location-header">
-		<h2>Add user</h2>
-	</div>
-	<div class="col-md-6 col-xs-12 page-header-btn">
-		
-	</div>
-</div>
+
 <div class="form-wrapper">
 	<form action="<?php echo D_ROOT; ?>/view/users/index.php" method="post" id="add-user">
 	
