@@ -27,23 +27,29 @@ h6 {
   padding-bottom: 10px;
   color: #fff;
 }
+.white-logo a {
+  color: #fff;
+  text-decoration: none;
+}
 /* page title */
-.page-title-wrapper {
+.page-title {
   border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+  padding: 0;
+}
+.page-title-wrapper {
+  padding: 0 0 0;
   padding-bottom: 10px;
 }
 .page-title-wrapper h2 {
   font-family: "coolvetica";
   font-size: 3rem;
+  margin: 0;
 }
 /* LEFT BAR */
 .logo {
   padding-bottom: 10px;
   color: #337ab7;
-}
-.left-col,
-.right-col {
-  margin-top: 65px;
 }
 .dashboard-icon {
   padding-right: 7px;
@@ -62,6 +68,7 @@ h6 {
 .page-header-btn {
   padding-top: 15px;
   text-align: right;
+  padding: 0;
 }
 .location-header h2 {
   padding-left: 0 !important;

@@ -11,9 +11,18 @@
 	if($action == NULL){
 		$action = filter_input(INPUT_GET, 'action');
 		if($action == NULL){
-			$pageTitle = 'Dashboard';
 			include('view/header.php');
 			include('view/dashboard_login_view.php');
+		}
+	}
+
+	// collect the user information
+	class userInfo{
+		public function getUser(){
+			// grab the user info from the db
+			get_users();
+			// store the user into a global variable
+			$user = $_SESSION['user_firstName'];
 		}
 	}
 
@@ -21,12 +30,10 @@
 	switch ($action){
 		case 'dashboard':
 			// display the dashboard
-			$pageTitle = 'Dashboard';
 			include('view/dashboard.php');
 			break;
 		case 'sign-in':
 			// sign the user in
-			$pageTitle = 'Dashboard';
 			$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
 			$password = filter_input(INPUT_POST, 'password');
 			$_SESSON['is_valid_user'] = $email.$password;
@@ -46,7 +53,6 @@
 			break;
 		case 'feedback':
 			// view the feedback page
-			$pageTitle = 'Feedback';
 			include('view/header.php');
 			include('view/left-col.php');
 			include('view/feedback/index.php');
@@ -54,7 +60,6 @@
 			break;
 		case 'job-status':
 			// view the feedback page
-			$pageTitle = 'Job Status';
 			include('view/header.php');
 			include('view/left-col.php');
 			include('view/job-status/index.php');
@@ -62,7 +67,6 @@
 			break;
 		case 'orders':
 			// view the feedback page
-			$pageTitle = 'View Orders';
 			include('view/header.php');
 			include('view/left-col.php');
 			include('view/orders/index.php');
@@ -70,7 +74,6 @@
 			break;
 		case 'products':
 			// view the feedback page
-			$pageTitle = 'Products';
 			include('view/header.php');
 			include('view/left-col.php');
 			include('view/products/index.php');
@@ -78,7 +81,6 @@
 			break;
 		case 'reports':
 			// view the feedback page
-			$pageTitle = 'Reports';
 			include('view/header.php');
 			include('view/left-col.php');
 			include('view/reports/index.php');
@@ -86,7 +88,6 @@
 			break;
 		case 'server-status':
 			// view the feedback page
-			$pageTitle = 'Trust.RizePoint.com';
 			include('view/header.php');
 			include('view/left-col.php');
 			include('view/server-status/index.php');
@@ -94,7 +95,6 @@
 			break;
 		case 'users':
 			// view the feedback page
-			$pageTitle = 'Users';
 			include('view/header.php');
 			include('view/left-col.php');
 			include('view/users/index.php');
@@ -102,7 +102,6 @@
 			break;
 		case 'store-locations':
 			// view the feedback page
-			$pageTitle = 'Store Locations';
 			include('view/header.php');
 			include('view/left-col.php');
 			include('view/store-location/index.php');

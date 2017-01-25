@@ -1,8 +1,11 @@
-<div class="pg-header">
-	<div class="page-header-btn">
+<div class="container-fluid page-title">
+	<div class="col-md-6 col-xs-12 page-title-wrapper">
+		<h2>Store Locations</h2>
+	</div><!-- container -->
+	<div class="col-md-6 col-xs-12 page-header-btn">
 		<a href="<?php echo D_ROOT; ?>/view/store-location/add-store.php" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>  Add Store Location</a>
-	</div>
-</div>
+	</div>	
+</div><!-- page-title -->
 
 <div class="row">
 	<?php foreach ($stores as $store) : ?>

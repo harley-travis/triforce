@@ -1,14 +1,19 @@
-<div class="pg-header">
-	<div class="page-header-btn">
+<div class="container-fluid page-title">
+	<div class="col-md-6 col-xs-12 page-title-wrapper">
+		<h2>Users</h2>
+	</div><!-- container -->
+	<div class="col-md-6 col-xs-12 page-header-btn">
 		<a href="<?php echo D_ROOT; ?>/view/users/add-user.php" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>  Add User</a>
-	</div>
-</div>
+	</div>	
+</div><!-- page-title -->
 
 <table class="table table-striped table-hover">
 	<tr>
 		<th>First Name</th>
 		<th>Last Name</th>
 		<th>Email</th>
+		<th>User Type</th>
+		<th>Job Title</th>
 		<th>Edit</th>
 		<th>Delete</th>
 	</tr>
@@ -17,6 +22,8 @@
 		<td><?php echo $user['user_firstName']; ?></td>
 		<td><?php echo $user['user_lastName']; ?></td>
 		<td><?php echo $user['user_email']; ?></td>
+		<td><?php echo $user['user_type']; ?></td>
+		<td><?php echo $user['job_title']; ?></td>
 		<td>
 			
 			<form action="<?php echo D_ROOT; ?>/view/users/index.php" method="post">

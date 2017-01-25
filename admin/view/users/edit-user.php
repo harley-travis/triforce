@@ -1,4 +1,11 @@
-<h2 class="page-header">Edit user</h2>
+<div class="container-fluid page-title">
+	<div class="col-md-6 col-xs-12 page-title-wrapper">
+		<h2>Edit A User</h2>
+	</div><!-- container -->
+	<div class="col-md-6 col-xs-12 page-header-btn">
+		
+	</div>	
+</div><!-- page-title -->
 <div class="form-wrapper">
 	<form action="<?php echo D_ROOT; ?>/view/users/index.php" method="post" id="edit-user">
 	

@@ -2,14 +2,14 @@
 include('../header.php');
 include('../left-col.php');
 ?>
-<div class="page-header">
-	<div class="col-md-6 col-xs-12 location-header">
+<div class="container-fluid page-title">
+	<div class="col-md-6 col-xs-12 page-title-wrapper">
 		<h2>Add Feedback</h2>
-	</div>
+	</div><!-- container -->
 	<div class="col-md-6 col-xs-12 page-header-btn">
 		
-	</div>
-</div>
+	</div>	
+</div><!-- page-title -->
 <div class="form-wrapper">
 	<form action="<?php echo D_ROOT; ?>/view/feedback/index.php" method="post" id="add-feedback">
 	

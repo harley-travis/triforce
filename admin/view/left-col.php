@@ -1,26 +1,30 @@
 <header>
 	<div class="container-fluid logo-header">
-		<div class="container">
+		<div class="col-md-2">
 			<div class="white-logo">
-				<h1>White July</h1>
+				<h1><a href="<?php echo D_ROOT; ?>/index.php?action=dashboard">White July</a></h1>
 			</div><!-- logo -->
-		</div><!-- container -->
+		</div>
+		<div class="col-md-10 col-xs-12 header-nav">
+			<nav>		
+				<ul class="nav nav-pills">
+					<li role="presentation" class="active dropdown nav-wj">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user dashboard-icon" aria-hidden="true"> UserName <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li>Edit Profile</li>
+							<li>Settings</li>
+							<li><a href="<?php echo D_ROOT; ?>/model/logout.php">Logout</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div><!-- header-nav -->
 	</div><!-- logo-header -->
 </header>
-<div class="page-title">
-	<div class="container page-title-wrapper">
-	<?php
-		if(!isset($pageTitle)){
-			echo '<h2 class="page-title">error grabbing page title</h2>';
-		}else{
-			echo '<h2 class="page-title">'.$pageTitle.'</h2>';
-		}
-	 ?>
-	</div><!-- container -->
-</div><!-- page-title -->
-<div class="container content-wrapper">
+<div class="container-fluid content-wrapper">
 	<div class="row">
-		<div class="col-md-3 col-xs-12 left-col">
+		<div class="col-md-2 col-xs-12 left-col">
 			<nav class="dashboard-side-nav">
 				<ul class="nav nav-pills nav-stacked">
 					<li role="presentation" class="active"><a href="<?php echo D_ROOT; ?>/index.php?action=dashboard"><span class="glyphicon glyphicon-home dashboard-icon" aria-hidden="true"></span> Dashboard</a></li>
@@ -36,4 +40,4 @@
 				</ul>
 			</nav>
 		</div><!-- left-col -->
-		<div class="col-md-9 col-xs-12 right-col">
+		<div class="col-md-10 col-xs-12 right-col">
