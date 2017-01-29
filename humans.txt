@@ -1,5 +1,5 @@
 # humanstxt.org/
-# The turd(s) behind making this software
+# The dudes behind making this software
 
 # TEAM AND AUTHORS
 
@@ -11,7 +11,7 @@
     HTML5, CSS3
 	JavaScript
     jQuery
-    PHP
+    PHP5
     AngualrJS - Thanks Google dudes!
     Bootstrap - Thanks Twitter dudes!
 
