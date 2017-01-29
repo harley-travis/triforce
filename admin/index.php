@@ -107,6 +107,13 @@
 			include('view/store-location/index.php');
 			include('view/footer.php');
 			break;
+		case 'category':
+			// view the categories page
+			include('view/header.php');
+			include('view/left-col.php');
+			include('view/category/index.php');
+			include('view/footer.php');
+			break;
 			
 	}
 
