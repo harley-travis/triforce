@@ -12,48 +12,31 @@ function get_bands(){
     return $bands;    
 }
 
-// add the store
-function add_band($store_number, $district_number, $store_address_one, $store_address_two, $store_city, $store_state, $store_zip, $store_phone){
-	global $db;
-    $query = 'INSERT INTO band
-                (store_number, district_number, store_address_one, store_address_two, store_city, store_state, store_phone, store_zip)
-                VALUES
-                (:store_number, :district_number, :store_address_one, :store_address_two, :store_city, :store_state, :store_phone, :store_zip)';
+// stringify to JSON
+function bands_to_json(){
 	
-	$statement = $db->prepare($query);
-	$statement->bindValue(':store_number', $store_number);
-
-    $statement->execute();
-    $statement->closeCursor();
-}
-
-// grab the store by id
-function get_band_by_id($store_id){
 	global $db;
-    $query = 'SELECT * FROM stores
-              WHERE storeID = :store_id';
+    $query = 'SELECT * FROM band';
     $statement = $db->prepare($query);
-    $statement->bindValue(":store_id", $store_id);
     $statement->execute();
-    $store = $statement->fetch();
+    $bands = $statement->fetchAll(PDO::FETCH_ASSOC); // PDO::FETCH_ASSOC to remove the duplicate numeric columns in json file
     $statement->closeCursor();
-    return $store;
+	
+	// open productData.json
+	$jsonFile = fopen("model/data/productData.json", "w") or die("Unable to open productData File! Try again, or contact White July");
+	
+	// format query to json
+	$jsonText = json_encode($bands, JSON_PRETTY_PRINT);
+	
+	// write in the file and close
+	fwrite($jsonFile, '{"band":');
+	fwrite($jsonFile, $jsonText);
+	fwrite($jsonFile, "}");
+	fclose($jsonFile);
+
+
 }
 
-// edit the store
-function edit_band($store_id, $store_number, $district_number, $store_address_one, $store_address_two, $store_city, $store_state, $store_zip, $store_phone) {
-    global $db;
-    $query = 'UPDATE stores
-              SET storeID             = :store_id,
-                  store_number        = :store_number,
-              WHERE storeID           = :store_id';
-    
-    $statement = $db->prepare($query);
-    $statement->bindValue(':store_id', $store_id);
-	$statement->bindValue(':store_number', $store_number);
-    $statement->execute();
-    $statement->closeCursor();
-} 
 
 
 ?>

@@ -17,6 +17,10 @@
 		// grab the database info like you're supposed to do 
 		require_once('../model/database.php');
 		require_once('./model/products_db.php');
+		
+		// update json product file
+		bands_to_json();
+		
 	}else if($action == 'add-band' || $action == 'add-stone'){
 		// grab the database info like you're supposed to do 
 		require_once('../../model/database.php');
