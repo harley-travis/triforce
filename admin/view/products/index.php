@@ -16,33 +16,17 @@
 	if($action == 'products'){
 		// grab the database info like you're supposed to do 
 		require_once('../model/database.php');
+		require_once('./model/products.php');
 		require_once('./model/products_db.php');
-		
-		// update json product file
-		bands_to_json();
-		
+				
 	}else if($action == 'add-band' || $action == 'add-stone'){
 		// grab the database info like you're supposed to do 
 		require_once('../../model/database.php');
+		require_once('../../model/products.php');
 		require_once('../../model/products_db.php');
 	}else{
 		echo "Could not retrevie the database for the products page.";
 	}
-
-?>
-
-<div class="col-md-6 col-xs-12 product-selection">
-	<div class="add-product">
-		<a href="<?php echo D_ROOT; ?>/view/products/index.php?action=add-band">Add A Band</a>
-	</div><!-- add-band -->
-</div><!-- product-selection -->
-<div class="col-md-6 col-xs-12 product-selection">
-	<div class="add-product">
-		<a href="<?php echo D_ROOT; ?>/view/products/index.php?action=add-stone">Add A Stone</a>
-	</div><!-- add-band -->
-</div><!-- product-selection -->
-
-<?php
 
 	switch ($action){
 		
@@ -58,7 +42,19 @@
 			include('stone/index.php');
 			include('../footer.php');
 			break;
-		
+		default:
+			?>
+			<div class="col-md-6 col-xs-12 product-selection">
+				<div class="add-product">
+					<a href="<?php echo D_ROOT; ?>/view/products/index.php?action=add-band" class="btn btn-primary">Add A Band</a>
+				</div><!-- add-band -->
+			</div><!-- product-selection -->
+			<div class="col-md-6 col-xs-12 product-selection">
+				<div class="add-product">
+					<a href="<?php echo D_ROOT; ?>/view/products/index.php?action=add-stone" class="btn btn-primary">Add A Stone</a>
+				</div><!-- add-band -->
+			</div><!-- product-selection -->
+			<?php
 	}
 
 ?>

@@ -59,49 +59,49 @@
 			include('view/footer.php');
 			break;
 		case 'job-status':
-			// view the feedback page
+			// view the job status page
 			include('view/header.php');
 			include('view/left-col.php');
 			include('view/job-status/index.php');
 			include('view/footer.php');
 			break;
 		case 'orders':
-			// view the feedback page
+			// view the orders page
 			include('view/header.php');
 			include('view/left-col.php');
 			include('view/orders/index.php');
 			include('view/footer.php');
 			break;
 		case 'products':
-			// view the feedback page
+			// view the products page
 			include('view/header.php');
 			include('view/left-col.php');
 			include('view/products/index.php');
 			include('view/footer.php');
 			break;
 		case 'reports':
-			// view the feedback page
+			// view the reports page
 			include('view/header.php');
 			include('view/left-col.php');
 			include('view/reports/index.php');
 			include('view/footer.php');
 			break;
 		case 'server-status':
-			// view the feedback page
+			// view the server stats page
 			include('view/header.php');
 			include('view/left-col.php');
 			include('view/server-status/index.php');
 			include('view/footer.php');
 			break;
 		case 'users':
-			// view the feedback page
+			// view the users page
 			include('view/header.php');
 			include('view/left-col.php');
 			include('view/users/index.php');
 			include('view/footer.php');
 			break;
 		case 'store-locations':
-			// view the feedback page
+			// view the store locations page
 			include('view/header.php');
 			include('view/left-col.php');
 			include('view/store-location/index.php');

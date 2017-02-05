@@ -2,7 +2,7 @@
 
 // grab all feedback subject lines
 function get_subject(){
-	global $db;
+	$db = Database::getDB();
     $query = 'SELECT * FROM feedback';
     $statement = $db->prepare($query);
     $statement->execute();
@@ -14,7 +14,7 @@ function get_subject(){
 
 // add feedback
 function add_feedback($feedback_firstName, $feedback_lastName, $feedback_subject, $feedback_text){
-	global $db;
+	$db = Database::getDB();
     $query = 'INSERT INTO feedback
                 (feedback_firstName, feedback_lastName, feedback_subject, feedback_text)
                 VALUES
@@ -31,7 +31,7 @@ function add_feedback($feedback_firstName, $feedback_lastName, $feedback_subject
 
 // grab the feedback by id
 function get_feedback_by_id($feedback_id){
-	global $db;
+	$db = Database::getDB();
     $query = 'SELECT * FROM feedback
               WHERE feedbackID = :feedback_id';
     $statement = $db->prepare($query);
@@ -44,7 +44,7 @@ function get_feedback_by_id($feedback_id){
 
 // edit feedback
 function edit_feedback($feedback_id, $feedback_firstName, $feedback_lastName, $feedback_subject, $feedback_text) {
-    global $db;
+    $db = Database::getDB();
     $query = 'UPDATE feedback
               SET feedbackID          = :feedback_id,
                   feedback_firstName  = :feedback_firstName,

@@ -49,7 +49,7 @@
 		</div>
 
 		
-		<a href="<?php echo D_ROOT; ?>/view/feedback/index.php?action=view-feedback" class="btn btn-primary">Go Back</a>
+		<a href="<?php echo D_ROOT; ?>/view/store-location/index.php?action=view-store" class="btn btn-primary">Go Back</a>
 		<input type="submit" value="Save Changes" class="btn btn-success">
 	</form>
 </div><!-- form-wrapper -->

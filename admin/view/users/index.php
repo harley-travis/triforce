@@ -40,10 +40,9 @@
 
 				echo "There was an error adding a new user, please try again.";
 			}else{
-				// add the user to the db, put the data in a variable, display the page
+				//add the user to the db, put the data in a variable, display the page
 				add_user($userFirstName, $userLastName, $email, $password);
 				$users = get_users();
-				$subPageTitle = 'Add users';
 				include('../header.php');
 				include('../left-col.php');
 				include('users.php');

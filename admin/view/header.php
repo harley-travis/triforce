@@ -11,7 +11,7 @@ require_once(SECURE_CONNECTION);
 
 ?>
 <!doctype html>
-<html>
+<html lang="en">
     <head>
         <title>Dashboard | White July</title>
         

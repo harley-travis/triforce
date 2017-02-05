@@ -1,5 +1,7 @@
 <?php 
 
+date_default_timezone_set('America/Phoenix');
+
 //define the url paths
 define("D_ROOT", "/phplearns/admin");
 // commented one below is the real rootpath

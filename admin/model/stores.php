@@ -2,7 +2,7 @@
 
 // grab all stores
 function get_stores(){
-	global $db;
+	$db = Database::getDB();
     $query = 'SELECT * FROM stores';
     $statement = $db->prepare($query);
     $statement->execute();
@@ -14,7 +14,7 @@ function get_stores(){
 
 // add the store
 function add_store($store_number, $district_number, $store_address_one, $store_address_two, $store_city, $store_state, $store_zip, $store_phone){
-	global $db;
+	$db = Database::getDB();
     $query = 'INSERT INTO stores
                 (store_number, district_number, store_address_one, store_address_two, store_city, store_state, store_phone, store_zip)
                 VALUES
@@ -35,7 +35,7 @@ function add_store($store_number, $district_number, $store_address_one, $store_a
 
 // grab the store by id
 function get_store_by_id($store_id){
-	global $db;
+	$db = Database::getDB();
     $query = 'SELECT * FROM stores
               WHERE storeID = :store_id';
     $statement = $db->prepare($query);
@@ -48,7 +48,7 @@ function get_store_by_id($store_id){
 
 // edit the store
 function edit_store($store_id, $store_number, $district_number, $store_address_one, $store_address_two, $store_city, $store_state, $store_zip, $store_phone) {
-    global $db;
+    $db = Database::getDB();
     $query = 'UPDATE stores
               SET storeID             = :store_id,
                   store_number        = :store_number,

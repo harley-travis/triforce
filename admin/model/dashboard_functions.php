@@ -2,7 +2,7 @@
 
 // register user at the login screen
 function register($email, $password, $userFirstName, $userLastName){
-	global $db;
+	$db = Database::getDB();
 	$password = sha1($email . $password);
 	$query = 'INSERT INTO users (user_email, user_password, user_firstName, user_lastName)
 			  VALUES (:email, :password, :user_firstName, :user_lastName)';
@@ -17,13 +17,19 @@ function register($email, $password, $userFirstName, $userLastName){
 
 // log the user in for the designer access
 function designer_login($email, $password){
-	global $db;
+	$db = Database::getDB();
 	$password = sha1($email . $password);
+	$timestamp = date("Y-m-d H:i:s A"); // put the date n' time into a var
+	
 	$query = 'SELECT user_id FROM users
+			  WHERE user_email = :email AND user_password = :password; 
+			  UPDATE users 
+			  SET last_logged_on = :timestamp 
 			  WHERE user_email = :email AND user_password = :password';
 	$statement = $db->prepare($query);
 	$statement->bindValue(':email', $email);
 	$statement->bindValue(':password', $password);
+	$statement->bindValue(':timestamp', $timestamp);
 	$statement->execute();
 	$valid = ($statement->rowCount() == 1);
 	$statement->closeCursor();
@@ -31,9 +37,19 @@ function designer_login($email, $password){
 	
 }
 
+function last_logon($timestamp){
+	$db = Database::getDB();
+	$query = 'UPDATE users (last_logged_on)
+			  VALUES (:timestamp)';
+	$statement = $db->prepare($query);
+	$statement->bindValue(':timestamp', $timestamp);
+	$statement->execute();
+	$statement->closeCursor();
+}
+
 // view the users
 function get_users(){
-	global $db;
+	$db = Database::getDB();
     $query = 'SELECT * FROM users';
     $statement = $db->prepare($query);
     $statement->execute();
@@ -45,7 +61,7 @@ function get_users(){
 
 // locate the user by ID
 function get_user_by_id($user_id){
-    global $db;
+    $db = Database::getDB();
     $query = 'SELECT * FROM users
               WHERE user_id = :user_id';
     $statement = $db->prepare($query);
@@ -58,7 +74,7 @@ function get_user_by_id($user_id){
 
 // edit the user
 function edit_user($user_id, $userFirstName, $userLastName, $email, $password) {
-    global $db;
+    $db = Database::getDB();
     $query = 'UPDATE users
               SET user_id         = :user_id,
                   user_firstName  = :userFirstName,
@@ -79,7 +95,7 @@ function edit_user($user_id, $userFirstName, $userLastName, $email, $password) {
 
 // delete the user from the db
 function delete_user($user_id){
-	global $db;
+	$db = Database::getDB();
 	$query = 'DELETE FROM users
 			  WHERE user_id = :user_id';
 	$statement = $db->prepare($query);
@@ -90,7 +106,8 @@ function delete_user($user_id){
 
 //add a user
 function add_user($userFirstName, $userLastName, $email, $password){
-	global $db;
+	$db = Database::getDB();
+	$password = sha1($email . $password);
     $query = 'INSERT INTO users
                 (user_firstName, user_lastName, user_email, user_password)
                 VALUES

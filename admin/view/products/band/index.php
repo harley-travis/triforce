@@ -7,103 +7,128 @@
 	if($action == NULL){
 		$action = filter_input(INPUT_GET, 'action');
 		if($action == NULL){
-			include('../view/header.php');
-			include('../view/dashboard_login_view.php');
+			include('../../view/header.php');
+			include('../../view/dashboard_login_view.php');
 		}
+	}
+
+	// connect to the database
+	if($action == 'add-new-band' || $action == 'delete-band' || $action == 'edit-band-id' || $action == 'edit-band' || $action == 'view-bands' ){
+		// grab the database info like you're supposed to do 
+		require_once('../../../model/database.php');
+		require_once('../../../model/products.php');
+		require_once('../../../model/products_db.php');
+		
+		// update json product file
+		// NOTE: this functions needs to happen when user clicks SAVE
+		ProductDB::bands_to_json();
+		
+	}else if($action == 'delete-band' || $action == 'add-band' ){
+		// grab the database info like you're supposed to do 
+		require_once('../../model/database.php');
+		require_once('../../model/products.php');
+		require_once('../../model/products_db.php');
+	}else{
+		echo "Could not retrevie the database for the products page.";
 	}
 
 	switch ($action){
 		
-		case 'add-product':
+		case 'add-new-band':
 			// add a new user
-			$userFirstName = filter_input(INPUT_POST, 'userFirstName');
-			$userLastName = filter_input(INPUT_POST, 'userLastName');
-			$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-			$password = filter_input(INPUT_POST, 'password');
+			$bandName = filter_input(INPUT_POST, 'bandName');
+			$bandDesc = filter_input(INPUT_POST, 'bandDesc');
+			$bandPrice = filter_input(INPUT_POST, 'bandPrice');
+			$bandCategory = filter_input(INPUT_POST, 'bandCategory');
 
-			if($userFirstName == NULL || $userFirstName == FALSE ||  $userLastName == NULL || $userLastName == FALSE || $email == NULL || $email == FALSE || $password == NULL || $password == FALSE){
+			if($bandName == NULL || $bandName == FALSE ||  $bandDesc == NULL || $bandDesc == FALSE || $bandPrice == NULL || $bandPrice == FALSE){
 
-				echo "There was an error adding a new user, please try again.";
+				echo "There was an error adding a band, please try again.";
 			}else{
 				// add the user to the db, put the data in a variable, display the page
-				add_user($userFirstName, $userLastName, $email, $password);
-				$users = get_users();
-				$subPageTitle = 'Add users';
-				include('../header.php');
-				include('../left-col.php');
-				include('products.php');
-				include('../footer.php');
+				$band = new Band($bandName, $bandPrice, $bandDesc, $bandCategory);
+				ProductDB::add_band($band);
+				
+				//$bands = get_bands();
+				ProductDB::bands_to_json(); // add new json file with new band information
+				
+				$bands = ProductDB::get_bands();
+				
+				include('../../header.php');
+				include('../../left-col.php');
+				include('bands.php');
+				include('../../footer.php');
 
 			}
 			break;
-		case 'edit-product':
-			include('../header.php');
-			// if password = password in db then change password. 
-			// make a show password btn 
+		case 'edit-band':
+			include('../../header.php');
 
-			$user_id = filter_input(INPUT_POST, 'user_id');
-			$userFirstName = filter_input(INPUT_POST, 'userFirstName');
-			$userLastName = filter_input(INPUT_POST, 'userLastName');
-			$email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
-			$password = filter_input(INPUT_POST, 'password');
+			$band_id = filter_input(INPUT_POST, 'band_id');
+			$band_name = filter_input(INPUT_POST, 'band_name');
+			$band_price = filter_input(INPUT_POST, 'band_price');
+			$band_desc = filter_input(INPUT_POST, 'band_desc');
+			$band_category = filter_input(INPUT_POST, 'band_category');
 
 
-			if($user_id == NULL || $user_id == FALSE || $userFirstName == NULL || $userFirstName == FALSE || $userLastName == NULL || $userLastName == FALSE || $email == NULL || $email == FALSE || $password == NULL || $password == FALSE){
+			if($band_id == NULL || $band_id == FALSE || $band_name == NULL || $band_name == FALSE || $band_price == NULL || $band_price == FALSE || $band_desc == NULL || $band_desc == FALSE || $band_category == NULL || $band_category == FALSE){
 
 				echo "There was an error editing the user, please try again.";
 
 			}else{
-				// edit the user in the db, get the users and display on the users page
-				edit_user($user_id, $userFirstName, $userLastName, $email, $password);
-				$users = get_users();
+				// edit the band in the db
+				ProductDB::edit_band($band_id, $band_name, $band_price, $band_desc, $band_category);
+				$bands = ProductDB::get_bands();
+
 				//include('../header.php');
-				include('../left-col.php');
-				include('products.php');
-				include('../footer.php');
+				include('../../left-col.php');
+				include('bands.php');
+				include('../../footer.php');
 			}
 			break;
-		case 'edit-product-id':
+		case 'edit-band-id':
 			// get the user id to make changes
-			include('../header.php');
-			include('../left-col.php');
-			// get the user id
-			$user_id = $_POST['user_id'];
+			include('../../header.php');
+			include('../../left-col.php');
+			
+			// get the band id
+			$band_id = $_POST['band_id'];
 
-			// get the user info from the db and put it in a var
-			$user = get_user_by_id($user_id);
+			// get the user band from the db and put it in a var
+			$band = ProductDB::get_band_by_id($band_id);
 
 			// redirect to the edit page
-			include('edit-product.php');
-			include('../footer.php');
+			include('edit-band.php');
+			include('../../footer.php');
 			break;
-		case 'delete-product':
+		case 'delete-band':
 			// delete the user from the db
-			$user_id = filter_input(INPUT_POST, 'user_id');
+			$band_id = filter_input(INPUT_POST, 'band_id');
 		
-			if($user_id == NULL || $user_id == FALSE){
+			if($band_id == NULL || $band_id == FALSE){
 
-				echo "There was an error deleting the user";
+				echo "There was an error deleting the band";
 			}else{
-				delete_user($user_id);
-				$users = get_users();
-				include('../header.php');
-				include('../left-col.php');
-				include('products.php');
-				include('../footer.php');
+				ProductDB::delete_band($band_id);
+				$bands = ProductDB::get_bands();
+				ProductDB::bands_to_json();
+				include('../../header.php');
+				include('../../left-col.php');
+				include('bands.php');
+				include('../../footer.php');
 			}
 			break;
-		case 'view-products':
-			// view all users
-			$users = get_users();
-			include('../header.php');
-			include('../left-col.php');
-			include('products.php');
-			include('../footer.php');
+		case 'view-bands':
+			// view all bands
+			$bands = ProductDB::get_bands();
+			include('../../header.php');
+			include('../../left-col.php');
+			include('bands.php');
+			include('../../footer.php');
 			break;
 		default:
-			
-			include('products.php');
+			$bands = ProductDB::get_bands();
+			include('bands.php');
 	}
 
 ?>
-band
