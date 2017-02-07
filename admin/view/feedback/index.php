@@ -26,7 +26,7 @@
 	switch ($action){
 			
 		case 'view-feedback':
-			$subjects = get_subject();
+			$subjects = Feedback::get_subject();
 			include('../header.php');
 			include('../left-col.php');
 			include('feedback.php');
@@ -49,7 +49,7 @@
 				echo "There was an error adding your feedback. Make sure that all fields are filled out.";
 			}else{
 				// add the feedback to the db, return the subject lines
-				add_feedback($feedback_firstName, $feedback_lastName, $feedback_subject, $feedback_text);
+				Feedback::add_feedback($feedback_firstName, $feedback_lastName, $feedback_subject, $feedback_text);
 				$subjects = get_subject();
 				include('../header.php');
 				include('../left-col.php');
@@ -68,7 +68,7 @@
 			$feedback_id = $_POST['feedbackID'];
 
 			// get the user info from the db and put it in a var
-			$feedback = get_feedback_by_id($feedback_id);
+			$feedback = Feedback::get_feedback_by_id($feedback_id);
 
 			// redirect to the edit page
 			include('edit-feedback.php');
@@ -95,8 +95,8 @@
 
 			}else{
 				// edit the user in the db, get the users and display on the users page
-				edit_feedback($feedback_id, $feedback_firstName, $feedback_lastName, $feedback_subject, $feedback_text);
-				$subjects = get_subject();
+				Feedback::edit_feedback($feedback_id, $feedback_firstName, $feedback_lastName, $feedback_subject, $feedback_text);
+				$subjects = Feedback::get_subject();
 				include('../left-col.php');
 				include('feedback.php');
 				include('../footer.php');
@@ -104,7 +104,7 @@
 			break;
 			
 		default:
-			$subjects = get_subject();
+			$subjects = Feedback::get_subject();
 			include('feedback.php');
 			
 	}

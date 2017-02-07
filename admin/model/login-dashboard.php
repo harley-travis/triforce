@@ -19,7 +19,7 @@ class LoginDatabase{
 	}
 
 	// log the user in for the designer access
-	public static function designer_login($email, $password){
+	public static function dashboard_login($email, $password){
 		$db = Database::getDB();
 		$password = sha1($email . $password);
 		$timestamp = date("Y-m-d H:i:s A"); // put the date n' time into a var
@@ -38,16 +38,6 @@ class LoginDatabase{
 		$statement->closeCursor();
 		return $valid;
 
-	}
-
-	public static function last_logon($timestamp){
-		$db = Database::getDB();
-		$query = 'UPDATE users (last_logged_on)
-				  VALUES (:timestamp)';
-		$statement = $db->prepare($query);
-		$statement->bindValue(':timestamp', $timestamp);
-		$statement->execute();
-		$statement->closeCursor();
 	}
 
 	// view the users
@@ -108,19 +98,27 @@ class LoginDatabase{
 	}
 
 	//add a user
-	public static function add_user($userFirstName, $userLastName, $email, $password){
+	public static function add_user($newUser){
 		$db = Database::getDB();
-		$password = sha1($email . $password);
+		
+		$userFirstName = $newUser->getUserFirstName();
+		$userLastName = $newUser->getUserLastName();
+		$email = $newUser->getUserEmail();
+		$password = $newUser->getUserPassword();
+		
+		$dateCreated = date("Y-m-d"); // put the date into a var
+		
 		$query = 'INSERT INTO users
-					(user_firstName, user_lastName, user_email, user_password)
+					(user_firstName, user_lastName, user_email, user_password, date_user_created)
 					VALUES
-					(:userFirstName, :userLastName, :email, :password)';
+					(:userFirstName, :userLastName, :email, :password, :date_user_created)';
 
 		$statement = $db->prepare($query);
 		$statement->bindValue(':userFirstName', $userFirstName);
 		$statement->bindValue(':userLastName', $userLastName);
 		$statement->bindValue(':email', $email);
 		$statement->bindValue(':password', $password);
+		$statement->bindValue(':date_user_created', $dateCreated);
 		$statement->execute();
 		$statement->closeCursor();
 	}

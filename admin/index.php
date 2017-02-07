@@ -2,7 +2,7 @@
 		
 	// grab the database info like you're supposed to do 
 	require_once('model/database.php');
-	require_once('model/dashboard_functions.php');
+	require_once('model/login-dashboard.php');
 
 	// establish an action for the user
 	$action = filter_input(INPUT_POST, 'action');
@@ -20,7 +20,9 @@
 	class userInfo{
 		public function getUser(){
 			// grab the user info from the db
-			get_users();
+			//get_users();
+			LoginDatabase::get_users();
+			
 			// store the user into a global variable
 			$user = $_SESSION['user_firstName'];
 		}
@@ -38,7 +40,7 @@
 			$password = filter_input(INPUT_POST, 'password');
 			$_SESSON['is_valid_user'] = $email.$password;
 			
-			if(designer_login($email, $password)){
+			if(LoginDatabase::dashboard_login($email, $password)){
 				$_SESSON['is_valid_user'] = true;
 				include('view/dashboard.php');
 			}else{

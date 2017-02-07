@@ -26,7 +26,7 @@
 	switch ($action){
 			
 		case 'view-store':
-			$stores = get_stores();
+			$stores = Stores::get_stores();
 			include('../header.php');
 			include('../left-col.php');
 			include('stores.php');
@@ -50,8 +50,8 @@
 				echo "There was an error adding your store. Make sure that all fields are filled out. Try again.";
 			}else{
 				// add the feedback to the db, return the subject lines
-				add_store($store_number, $district_number, $store_address_one, $store_address_two, $store_city, $store_state, $store_zip, $store_phone);
-				$stores = get_stores();
+				Stores::add_store($store_number, $district_number, $store_address_one, $store_address_two, $store_city, $store_state, $store_zip, $store_phone);
+				$stores = Stores::get_stores();
 				include('../header.php');
 				include('../left-col.php');
 				include('stores.php');
@@ -69,7 +69,7 @@
 			$store_id = $_POST['storeID'];
 
 			// get the user info from the db and put it in a var
-			$store = get_store_by_id($store_id);
+			$store = Stores::get_store_by_id($store_id);
 
 			// redirect to the edit page
 			include('edit-store.php');
@@ -97,8 +97,8 @@
 
 			}else{
 				// edit the user in the db, get the users and display on the users page
-				edit_store($store_id, $store_number, $district_number, $store_address_one, $store_address_two, $store_city, $store_state, $store_zip, $store_phone);
-				$stores = get_stores();
+				Stores::edit_store($store_id, $store_number, $district_number, $store_address_one, $store_address_two, $store_city, $store_state, $store_zip, $store_phone);
+				$stores = Stores::get_stores();
 				include('../left-col.php');
 				include('stores.php');
 				include('../footer.php');
@@ -106,7 +106,7 @@
 			break;
 			
 		default:
-			$stores = get_stores();
+			$stores = Stores::get_stores();
 			include('stores.php');
 			
 	}

@@ -15,14 +15,16 @@
 	// the db file is not pulling globally
 	// this if statement finds the action of the user
 	// then gives it a proper db connection
-	if($action == 'users'){
-		// grab the database info like you're supposed to do 
-		require_once('../model/database.php');
-		require_once('./model/dashboard_functions.php');
-	}else if($action == 'edit-user' || $action == 'edit-user-id' || $action == 'delete-user' || $action == 'add-user' || $action == 'view-users'){
+	if($action == 'add-user' || $action == 'delete-user' || $action == 'edit-user-id' || $action == 'view-users'  || $action == 'edit-user'){
 		// grab the database info like you're supposed to do 
 		require_once('../../model/database.php');
-		require_once('../../model/dashboard_functions.php');
+		require_once('../../model/users.php');
+		require_once('../../model/login-dashboard.php');
+	}else if($action == 'users'){
+		// grab the database info like you're supposed to do 
+		require_once('./model/database.php');
+		require_once('./model/users.php');
+		require_once('./model/login-dashboard.php');
 	}else{
 		echo "Could not retrevie the database for the users page.";
 	}
@@ -41,8 +43,9 @@
 				echo "There was an error adding a new user, please try again.";
 			}else{
 				//add the user to the db, put the data in a variable, display the page
-				add_user($userFirstName, $userLastName, $email, $password);
-				$users = get_users();
+				$newUser = new Users($userFirstName, $userLastName, $email, $password);
+				LoginDatabase::add_user($newUser);
+				$users = LoginDatabase::get_users();
 				include('../header.php');
 				include('../left-col.php');
 				include('users.php');
@@ -68,8 +71,8 @@
 
 			}else{
 				// edit the user in the db, get the users and display on the users page
-				edit_user($user_id, $userFirstName, $userLastName, $email, $password);
-				$users = get_users();
+				LoginDatabase::edit_user($user_id, $userFirstName, $userLastName, $email, $password);
+				$users = LoginDatabase::get_users();
 				//include('../header.php');
 				include('../left-col.php');
 				include('users.php');
@@ -84,7 +87,7 @@
 			$user_id = $_POST['user_id'];
 
 			// get the user info from the db and put it in a var
-			$user = get_user_by_id($user_id);
+			$user = LoginDatabase::get_user_by_id($user_id);
 
 			// redirect to the edit page
 			include('edit-user.php');
@@ -98,8 +101,8 @@
 
 				echo "There was an error deleting the user";
 			}else{
-				delete_user($user_id);
-				$users = get_users();
+				LoginDatabase::delete_user($user_id);
+				$users = LoginDatabase::get_users();
 				include('../header.php');
 				include('../left-col.php');
 				include('users.php');
@@ -108,14 +111,14 @@
 			break;
 		case 'view-users':
 			// view all users
-			$users = get_users();
+			$users = LoginDatabase::get_users();
 			include('../header.php');
 			include('../left-col.php');
 			include('users.php');
 			include('../footer.php');
 			break;
 		default:
-			$users = get_users();
+			$users = LoginDatabase::get_users();
 			include('users.php');
 	}
 
